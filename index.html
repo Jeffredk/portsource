@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
+    <title>Jk ~ Portfolio Nanodev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="timeline.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <!-- Desktop Layout -->
+    <div class="app-container desktop-layout">
+        <!-- Sidebar gauche -->
+        <div class="sidebar-left slide-in-left">
+            <div class="logo-section">
+                <div class="logo-avatar">
+                    <span class="avatar-initials">ND</span>
+                    <i class="fas fa-user avatar-icon"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">NanoDev</span>
+                    <span class="full-name">John Doe</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-item active" data-section="accueil">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </div>
+                <div class="nav-item" data-section="apropos">
+                    <i class="fas fa-user"></i>
+                    <span>À propos</span>
+                </div>
+                <div class="nav-item" data-section="timeline">
+                    <i class="fa-solid fa-timeline"></i>
+                    <span>Timeline</span>
+                </div>
+                <div class="nav-item" data-section="projets">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Projets</span>
+                </div>
+                <div class="nav-item" data-section="competences">
+                    <i class="fas fa-code"></i>
+                    <span>Compétences</span>
+                </div>
+                <div class="nav-item" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </div>
+            </nav>
+            
+            <div class="progress-section">
+                <div class="progress-title">Projets en cours</div>
+                <div class="progress-item">
+                    <span>E-commerce App</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header fade-in">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Rechercher dans le portfolio...">
+            </div>
+            
+            <div class="header-actions">
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Zone principale -->
+        <main class="main-content fade-in">
+            <!-- Section Accueil -->
+            <div class="content-section hero-section active" data-section="accueil">
+                <div class="hero-content">
+                    <h1>Développeur Full-Stack</h1>
+                    <p class="subtitle">
+                        Je crée des expériences numériques modernes et performantes. 
+                        Passionné par le développement web et mobile, je transforme vos idées en solutions innovantes.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary">
+                            <i class="fas fa-eye"></i>
+                            Voir mes projets
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Télécharger CV
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section À propos -->
+            <div class="content-section about-section" data-section="apropos">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>À propos de moi</h2>
+                        <p> Je suis John Doe Jeune développeur passionné par les TICS non loin de moi les insectes mais plûtot tout ce qui relève de la Technologie.</p>
+                        <p>Mon expertise couvre l'ensemble du stack technologique, du front-end au back-end, avec une attention particulière portée à l'expérience utilisateur et aux bonnes pratiques de développement.</p>
+                        <p>Je suis constamment à la recherche de nouveaux défis techniques et j'aime collaborer avec des équipes dynamiques pour créer des solutions innovantes.</p>
+                        <p>L'une de mes plus grandes lignes directives de vie est :</p>
+                        <p><em>"Arrange toi à être toujours meilleur qu'hier"</em></p>
+                        <h6>Kaizen</h6>
+                    </div>
+                    <div class="about-avatar">
+                        <div class="avatar-img">ND</div>
+                        <h3 style="color: var(--primary-color); margin: 0;">NanoDev</h3>
+                        <p style="color: rgba(44,44,44,0.7); margin: 5px 0 0 0;">Développeur Full-Stack</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Timeline -->
+            <div class="content-section timeline-section" data-section="timeline">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Ma timeline</h2>
+                <div class="timeline-content">
+                    <div class="cards-container">
+                        <ul class="cards" style="--items: 8;">
+                            <li style="--i: 0;">
+                                <input type="radio" id="timeline-item-0" name="timeline-item" checked>
+                                <label for="timeline-item-0">2020</label>
+                                <h2>2020</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Obtention de la certification SQL - Début de ma formation en développement de bases de données et apprentissage des requêtes complexes.
+                                </p>
+                            </li>
+                            <li style="--i: 1;">
+                                <input type="radio" id="timeline-item-1" name="timeline-item">
+                                <label for="timeline-item-1">2021</label>
+                                <h2>2021</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Baccalauréat Série Scientifique - Obtention du diplôme avec mention, consolidation des bases scientifiques et mathématiques.
+                                </p>
+                            </li>
+                            <li style="--i: 2;">
+                                <input type="radio" id="timeline-item-2" name="timeline-item">
+                                <label for="timeline-item-2">2022</label>
+                                <h2>2022</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Participation à l'AR/VR Africa Hackathon - Première expérience en développement de réalité augmentée et virtuelle, travail en équipe sur des projets innovants.
+                                </p>
+                            </li>
+                            <li style="--i: 3;">
+                                <input type="radio" id="timeline-item-3" name="timeline-item">
+                                <label for="timeline-item-3">2023</label>
+                                <h2>2023</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Certification GADTP : Développement Android (Kotlin) - Maîtrise du développement mobile natif Android et des bonnes pratiques Kotlin.
+                                </p>
+                            </li>
+                            <li style="--i: 4;">
+                                <input type="radio" id="timeline-item-4" name="timeline-item">
+                                <label for="timeline-item-4">2024</label>
+                                <h2>2024</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Licence professionnelle développement logiciels - Spécialisation en ingénierie logicielle, gestion de projets et architecture d'applications.
+                                </p>
+                            </li>
+                            <li style="--i: 5;">
+                                <input type="radio" id="timeline-item-5" name="timeline-item">
+                                <label for="timeline-item-5">2024</label>
+                                <h2>Certif JA</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Certification Junior Achievement - Formation à l'entrepreneuriat digital et aux compétences en leadership de projets technologiques.
+                                </p>
+                            </li>
+                            <li style="--i: 6;">
+                                <input type="radio" id="timeline-item-6" name="timeline-item">
+                                <label for="timeline-item-6">2024</label>
+                                <h2>Flutter</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> <br>
+                                    Certification Flutter - Expertise en développement mobile cross-platform, création d'applications iOS et Android avec un seul codebase.
+                                </p>
+                            </li>
+                            <li style="--i: 7;">
+                                <input type="radio" id="timeline-item-7" name="timeline-item">
+                                <label for="timeline-item-7">Auj</label>
+                                <h2>Webmaster</h2>
+                                <p style="text-align: center;">
+                                    <span style="font-weight: bold;">Oct. 2024 - Aujourd'hui</span> 
+                                    <br> Développeur Full-Stack actif - Travail sur des projets variés, veille technologique constante et développement de solutions innovantes.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Projets -->
+            <div class="content-section projects-section" data-section="projets">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Mes Projets</h2>
+                <div class="projects-grid">
+                    <div class="project-card-mini">
+                        <h4>E-commerce Platform</h4>
+                        <p>Plateforme complète avec panier, paiement et gestion des stocks.</p>
+                    </div>
+                    <div class="project-card-mini">
+                        <h4>Portfolio Dynamique</h4>
+                        <p>Site vitrine responsive avec animations modernes.</p>
+                    </div>
+                    <div class="project-card-mini">
+                        <h4>App Mobile React Native</h4>
+                        <p>Application mobile cross-platform pour la gestion des tâches.</p>
+                    </div>
+                    <div class="project-card-mini">
+                        <h4>Dashboard Analytics</h4>
+                        <p>Interface d'administration avec graphiques et métriques.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Compétences -->
+            <div class="content-section skills-section" data-section="competences">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Mes Compétences</h2>
+                <div class="skills-grid-mini">
+                    <div class="skill-item-mini">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-vue"></i>
+                        <span>Vue.js</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fas fa-database"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Contact -->
+            <div class="content-section contact-section" data-section="contact">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px;">Contactez-moi</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom *</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom complet" maxlength="100">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com" maxlength="254">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" maxlength="200">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Votre message..." maxlength="2000"></textarea>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <!-- Honeypot pour anti-spam -->
+                    <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+                    
+                    <button type="submit" class="btn-primary" id="submitBtn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Envoyer le message</span>
+                    </button>
+                    
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Sidebar droite -->
+        <aside class="sidebar-right slide-in-right">
+            <div class="widget">
+                <h3 class="widget-title">Statistiques</h3>
+                <div class="stats-simple">
+                    <div class="rotating-stat active" data-stat="0">
+                        <div class="stat-header">
+                            <i class="fas fa-project-diagram stat-icon-simple"></i>
+                            <div class="stat-info-simple">
+                                <div class="stat-label-simple">Projets</div>
+                                <div class="stat-number-simple">25+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rotating-stat" data-stat="1">
+                        <div class="stat-header">
+                            <i class="fas fa-calendar-alt stat-icon-simple"></i>
+                            <div class="stat-info-simple">
+                                <div class="stat-label-simple">Expérience</div>
+                                <div class="stat-number-simple">3+ ans</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rotating-stat" data-stat="2">
+                        <div class="stat-header">
+                            <i class="fas fa-heart stat-icon-simple"></i>
+                            <div class="stat-info-simple">
+                                <div class="stat-label-simple">Satisfaction</div>
+                                <div class="stat-number-simple">100%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rotating-stat" data-stat="3">
+                        <div class="stat-header">
+                            <i class="fas fa-users stat-icon-simple"></i>
+                            <div class="stat-info-simple">
+                                <div class="stat-label-simple">Clients</div>
+                                <div class="stat-number-simple">15+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-dots">
+                        <span class="stat-dot active" data-dot="0"></span>
+                        <span class="stat-dot" data-dot="1"></span>
+                        <span class="stat-dot" data-dot="2"></span>
+                        <span class="stat-dot" data-dot="3"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="widget">
+                <h3 class="widget-title">Contact rapide</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@nanodev.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 1 23 45 67 89</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paris, France</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer fade-in">
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fab fa-github"></i> 
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Disponible pour de nouveaux projets</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile Layout -->
+    <div class="app-container mobile-layout">
+        <!-- Mobile Header with Logo -->
+        <header class="mobile-header">
+            <div class="mobile-header-content">
+                <div class="mobile-logo">
+                    <div class="logo-avatar mobile">
+                        <span class="avatar-initials">ND</span>
+                    </div>
+                    <div class="logo-text mobile">
+                        <span class="brand-name">NanoDev</span>
+                        <span class="full-name">John Doe</span>
+                    </div>
+                </div>
+                <div class="mobile-theme-toggle" id="mobileThemeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Content -->
+        <main class="mobile-main-content">
+            <!-- Section Accueil -->
+            <section class="mobile-section hero-section active" data-section="accueil">
+                <div class="hero-content">
+                    <h1>Développeur Full-Stack</h1>
+                    <p class="subtitle">
+                        Je crée des expériences numériques modernes et performantes. 
+                        Passionné par le développement web et mobile, je transforme vos idées en solutions innovantes.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary">
+                            <i class="fas fa-eye"></i>
+                            Voir mes projets
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Télécharger CV
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section À propos -->
+            <section class="mobile-section about-section" data-section="apropos">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>À propos de moi</h2>
+                        <p> Je suis John Doe Jeune développeur passionné par les TICS non loin de moi les insectes mais plûtot tout ce qui relève de la Technologie.</p>
+                        <p>Mon expertise couvre l'ensemble du stack technologique, du front-end au back-end, avec une attention particulière portée à l'expérience utilisateur et aux bonnes pratiques de développement.</p>
+                        <p>Je suis constamment à la recherche de nouveaux défis techniques et j'aime collaborer avec des équipes dynamiques pour créer des solutions innovantes.</p>
+                        <p>L'une de mes plus grandes lignes directives de vie est :</p>
+                        <p><em>"Arrange toi à être toujours meilleur qu'hier"</em></p>
+                        <h6>Kaizen</h6>
+                    </div>
+                    <div class="about-avatar">
+                        <div class="avatar-img">ND</div>
+                        <h3 style="color: var(--primary-color); margin: 0;">NanoDev</h3>
+                        <p style="color: rgba(44,44,44,0.7); margin: 5px 0 0 0;">Développeur Full-Stack</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Timeline -->
+            <section class="mobile-section timeline-section" data-section="timeline">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Mon Parcours</h2>
+                
+                <!-- Desktop Timeline (masquée sur mobile) -->
+                <div class="timeline-content">
+                    <div class="cards-container">
+                        <ul class="cards" style="--items: 8;">
+                            <li style="--i: 0;">
+                                <input type="radio" id="mobile-timeline-item-0" name="mobile-timeline-item" checked>
+                                <label for="mobile-timeline-item-0">2020</label>
+                                <h2>2020</h2>
+                                <p>Obtention de la certification SQL - Début de ma formation en développement de bases de données et apprentissage des requêtes complexes.</p>
+                            </li>
+                            <li style="--i: 1;">
+                                <input type="radio" id="mobile-timeline-item-1" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-1">2021</label>
+                                <h2>2021</h2>
+                                <p>Baccalauréat Série Scientifique - Obtention du diplôme avec mention, consolidation des bases scientifiques et mathématiques.</p>
+                            </li>
+                            <li style="--i: 2;">
+                                <input type="radio" id="mobile-timeline-item-2" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-2">2022</label>
+                                <h2>2022</h2>
+                                <p>Participation à l'AR/VR Africa Hackathon - Première expérience en développement de réalité augmentée et virtuelle, travail en équipe sur des projets innovants.</p>
+                            </li>
+                            <li style="--i: 3;">
+                                <input type="radio" id="mobile-timeline-item-3" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-3">2023</label>
+                                <h2>2023</h2>
+                                <p>Certification GADTP : Développement Android (Kotlin) - Maîtrise du développement mobile natif Android et des bonnes pratiques Kotlin.</p>
+                            </li>
+                            <li style="--i: 4;">
+                                <input type="radio" id="mobile-timeline-item-4" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-4">2024</label>
+                                <h2>2024</h2>
+                                <p>Licence professionnelle développement logiciels - Spécialisation en ingénierie logicielle, gestion de projets et architecture d'applications.</p>
+                            </li>
+                            <li style="--i: 5;">
+                                <input type="radio" id="mobile-timeline-item-5" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-5">2024</label>
+                                <h2>Certif JA</h2>
+                                <p>Certification Junior Achievement - Formation à l'entrepreneuriat digital et aux compétences en leadership de projets technologiques.</p>
+                            </li>
+                            <li style="--i: 6;">
+                                <input type="radio" id="mobile-timeline-item-6" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-6">2024</label>
+                                <h2>Flutter</h2>
+                                <p>Certification Flutter - Expertise en développement mobile cross-platform, création d'applications iOS et Android avec un seul codebase.</p>
+                            </li>
+                            <li style="--i: 7;">
+                                <input type="radio" id="mobile-timeline-item-7" name="mobile-timeline-item">
+                                <label for="mobile-timeline-item-7">2025</label>
+                                <h2>Aujourd'hui</h2>
+                                <p>Développeur Full-Stack actif - Travail sur des projets variés, veille technologique constante et développement de solutions innovantes.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Mobile Timeline (visible uniquement sur mobile) -->
+                <div class="mobile-timeline">
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2020 - Certification SQL</h3>
+                            <p>Obtention de la certification SQL - Début de ma formation en développement de bases de données et apprentissage des requêtes complexes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2021 - Baccalauréat</h3>
+                            <p>Baccalauréat Série Scientifique - Obtention du diplôme avec mention, consolidation des bases scientifiques et mathématiques.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2022 - AR/VR Hackathon</h3>
+                            <p>Participation à l'AR/VR Africa Hackathon - Première expérience en développement de réalité augmentée et virtuelle, travail en équipe sur des projets innovants.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2023 - Certification Android</h3>
+                            <p>Certification GADTP : Développement Android (Kotlin) - Maîtrise du développement mobile natif Android et des bonnes pratiques Kotlin.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2024 - Licence Pro</h3>
+                            <p>Licence professionnelle développement logiciels - Spécialisation en ingénierie logicielle, gestion de projets et architecture d'applications.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2024 - Junior Achievement</h3>
+                            <p>Certification Junior Achievement - Formation à l'entrepreneuriat digital et aux compétences en leadership de projets technologiques.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2024 - Flutter</h3>
+                            <p>Certification Flutter - Expertise en développement mobile cross-platform, création d'applications iOS et Android avec un seul codebase.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-timeline-item">
+                        <div class="mobile-timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="mobile-timeline-content">
+                            <h3>2025 - Aujourd'hui</h3>
+                            <p>Développeur Full-Stack actif - Travail sur des projets variés, veille technologique constante et développement de solutions innovantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Projets -->
+            <section class="mobile-section projects-section" data-section="projets">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Mes Projets</h2>
+                <div class="projects-grid">
+                    <div class="project-card-mini">
+                        <h4>E-commerce Platform</h4>
+                        <p>Plateforme complète avec panier, paiement et gestion des stocks.</p>
+                    </div>
+                    <div class="project-card-mini">
+                        <h4>Portfolio Dynamique</h4>
+                        <p>Site vitrine responsive avec animations modernes.</p>
+                    </div>
+                    <div class="project-card-mini">
+                        <h4>App Mobile React Native</h4>
+                        <p>Application mobile cross-platform pour la gestion des tâches.</p>
+                    </div>
+                    <div class="project-card-mini">
+                        <h4>Dashboard Analytics</h4>
+                        <p>Interface d'administration avec graphiques et métriques.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Compétences -->
+            <section class="mobile-section skills-section" data-section="competences">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Mes Compétences</h2>
+                <div class="skills-grid-mini">
+                    <div class="skill-item-mini">
+                        <i class="fab fa-html5"></i>
+                        <span>Html</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>Css</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fa-brands fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fa-brands fa-flutter"></i>
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fas fa-database"></i>
+                        <span>Laravel</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-docker"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-aws"></i>
+                        <span>Photoshop</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Contact (moved before footer) -->
+            <section class="mobile-section contact-section" data-section="contact">
+                <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px;">Contactez-moi</h2>
+                <form class="contact-form" id="mobileContactForm">
+                    <div class="form-group">
+                        <label for="mobile-name">Nom *</label>
+                        <input type="text" id="mobile-name" name="name" required placeholder="Votre nom complet" maxlength="100">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile-email">Email *</label>
+                        <input type="email" id="mobile-email" name="email" required placeholder="votre@email.com" maxlength="254">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile-subject">Sujet</label>
+                        <input type="text" id="mobile-subject" name="subject" placeholder="Sujet de votre message" maxlength="200">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile-message">Message *</label>
+                        <textarea id="mobile-message" name="message" rows="5" required placeholder="Votre message..." maxlength="2000"></textarea>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+                    
+                    <button type="submit" class="btn-primary" id="mobileSubmitBtn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Envoyer le message</span>
+                    </button>
+                    
+                    <div class="form-status" id="mobileFormStatus"></div>
+                </form>
+            </section>
+
+            <!-- Mobile Footer inside content flow -->
+            <footer class="mobile-footer-content">
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i> 
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Disponible pour de nouveaux projets</span>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>&copy; 2025 NanoDev. Tous droits réservés.</p>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Mobile Navigation (Bottom) -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-item active" data-section="accueil">
+                <i class="fas fa-home"></i>
+                <span class="nav-label">Accueil</span>
+            </div>
+            <div class="mobile-nav-item" data-section="apropos">
+                <i class="fas fa-user"></i>
+                <span class="nav-label">À propos</span>
+            </div>
+            <div class="mobile-nav-item" data-section="timeline">
+                <i class="fa-solid fa-timeline"></i>
+                <span class="nav-label">Timeline</span>
+            </div>
+            <div class="mobile-nav-item" data-section="projets">
+                <i class="fas fa-briefcase"></i>
+                <span class="nav-label">Projets</span>
+            </div>
+            <div class="mobile-nav-item" data-section="competences">
+                <i class="fas fa-code"></i>
+                <span class="nav-label">Compétences</span>
+            </div>
+            <div class="mobile-nav-item" data-section="contact">
+                <i class="fas fa-envelope"></i>
+                <span class="nav-label">Contact</span>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // Theme toggle for desktop
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const body = document.body;
+
+        function toggleTheme() {
+            body.classList.toggle('dark-mode');
+            
+            const desktopIcon = themeToggle?.querySelector('i');
+            const mobileIcon = mobileThemeToggle?.querySelector('i');
+            
+            if (body.classList.contains('dark-mode')) {
+                if (desktopIcon) desktopIcon.classList.replace('fa-moon', 'fa-sun');
+                if (mobileIcon) mobileIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                if (desktopIcon) desktopIcon.classList.replace('fa-sun', 'fa-moon');
+                if (mobileIcon) mobileIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Desktop Navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const contentSections = document.querySelectorAll('.content-section');
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetSection = item.getAttribute('data-section');
+                
+                // Retirer l'état actif de tous les éléments de navigation
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Cacher toutes les sections
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Afficher la section ciblée avec animation
+                const targetElement = document.querySelector(`[data-section="${targetSection}"].content-section`);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.classList.add('active');
+                    }, 150);
+                }
+            });
+        });
+
+        // Mobile Navigation
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        const mobileSections = document.querySelectorAll('.mobile-section');
+        const mobileMainContent = document.querySelector('.mobile-main-content');
+        
+        // Function to update active navigation item based on scroll
+        function updateActiveNavOnScroll() {
+            if (!mobileMainContent) return;
+            
+            const scrollTop = mobileMainContent.scrollTop;
+            const viewportHeight = mobileMainContent.clientHeight;
+            
+            let activeSection = null;
+            let maxVisibility = 0;
+            
+            mobileSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const sectionTop = rect.top + scrollTop;
+                const sectionHeight = section.offsetHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(viewportHeight, rect.bottom));
+                const visibleBottom = Math.max(0, Math.min(viewportHeight, viewportHeight - rect.top));
+                const visibleHeight = Math.max(0, visibleBottom - (viewportHeight - visibleTop));
+                const visibilityRatio = visibleHeight / Math.min(sectionHeight, viewportHeight);
+                
+                if (visibilityRatio > maxVisibility) {
+                    maxVisibility = visibilityRatio;
+                    activeSection = section.getAttribute('data-section');
+                }
+            });
+            
+            if (activeSection) {
+                // Update navigation active states
+                mobileNavItems.forEach(nav => {
+                    nav.classList.remove('active');
+                    const label = nav.querySelector('.nav-label');
+                    label.style.display = 'none';
+                });
+                
+                const activeNav = document.querySelector(`.mobile-nav-item[data-section="${activeSection}"]`);
+                if (activeNav) {
+                    activeNav.classList.add('active');
+                    const activeLabel = activeNav.querySelector('.nav-label');
+                    activeLabel.style.display = 'block';
+                }
+            }
+        }
+        
+        // Throttle scroll events for performance
+        let scrollTimeout;
+        function throttleScroll() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateActiveNavOnScroll, 100);
+        }
+        
+        // Add scroll listener to mobile main content
+        if (mobileMainContent) {
+            mobileMainContent.addEventListener('scroll', throttleScroll);
+        }
+        
+        // Mobile navigation click handlers
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetSection = item.getAttribute('data-section');
+                
+                // Find target section and scroll to it
+                const targetElement = document.querySelector(`[data-section="${targetSection}"].mobile-section`);
+                if (targetElement && mobileMainContent) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize mobile nav labels (only show active)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial active state
+            setTimeout(() => {
+                updateActiveNavOnScroll();
+            }, 500);
+            
+            // Initialize nav labels
+            mobileNavItems.forEach(nav => {
+                const label = nav.querySelector('.nav-label');
+                if (!nav.classList.contains('active')) {
+                    label.style.display = 'none';
+                }
+            });
+        });
+
+        // Animation des barres de progression
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+
+        // Animation d'apparition des éléments
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Recherche avec liste déroulante
+        const searchInput = document.querySelector('.search-input');
+        const searchableItems = [
+            // Sections principales avec métadonnées complètes
+            {
+                title: 'Accueil',
+                description: 'Page d\'accueil - Développeur Full-Stack',
+                icon: 'fas fa-home',
+                keywords: ['accueil', 'home', 'développeur', 'full-stack', 'portfolio', 'john doe', 'nanodev'],
+                section: 'accueil',
+                type: 'section'
+            },
+            {
+                title: 'À propos',
+                description: 'Présentation et expérience professionnelle',
+                icon: 'fas fa-user',
+                keywords: ['à propos', 'about', 'expérience', 'développeur', 'passionné', 'john doe'],
+                section: 'apropos',
+                type: 'section'
+            },
+            {
+                title: 'Projets',
+                description: 'Portfolio des projets réalisés',
+                icon: 'fas fa-briefcase',
+                keywords: ['projets', 'projects', 'e-commerce', 'portfolio', 'react native', 'dashboard', 'analytics'],
+                section: 'projets',
+                type: 'section'
+            },
+            {
+                title: 'Compétences',
+                description: 'Technologies et outils maîtrisés',
+                icon: 'fas fa-code',
+                keywords: ['compétences', 'skills', 'react', 'vue', 'nodejs', 'python', 'mongodb', 'docker', 'aws', 'git'],
+                section: 'competences',
+                type: 'section'
+            },
+            {
+                title: 'Contact',
+                description: 'Formulaire de contact et informations',
+                icon: 'fas fa-envelope',
+                keywords: ['contact', 'contactez', 'email', 'message', 'formulaire'],
+                section: 'contact',
+                type: 'section'
+            },
+            
+            // Projets spécifiques
+            {
+                title: 'E-commerce Platform',
+                description: 'Plateforme complète avec panier et paiement',
+                icon: 'fas fa-shopping-cart',
+                keywords: ['e-commerce', 'plateforme', 'panier', 'paiement', 'stocks'],
+                section: 'projets',
+                type: 'project'
+            },
+            {
+                title: 'Portfolio Dynamique',
+                description: 'Site vitrine responsive avec animations',
+                icon: 'fas fa-palette',
+                keywords: ['portfolio', 'vitrine', 'responsive', 'animations'],
+                section: 'projets',
+                type: 'project'
+            },
+            {
+                title: 'App Mobile React Native',
+                description: 'Application cross-platform pour gestion des tâches',
+                icon: 'fas fa-mobile-alt',
+                keywords: ['app', 'mobile', 'react native', 'cross-platform', 'tâches'],
+                section: 'projets',
+                type: 'project'
+            },
+            {
+                title: 'Dashboard Analytics',
+                description: 'Interface d\'administration avec graphiques',
+                icon: 'fas fa-chart-bar',
+                keywords: ['dashboard', 'analytics', 'administration', 'graphiques', 'métriques'],
+                section: 'projets',
+                type: 'project'
+            },
+            
+            // Compétences principales
+            {
+                title: 'React & Vue.js',
+                description: 'Frameworks JavaScript modernes',
+                icon: 'fab fa-react',
+                keywords: ['react', 'vue', 'javascript', 'frameworks', 'frontend'],
+                section: 'competences',
+                type: 'skill'
+            },
+            {
+                title: 'Node.js & Python',
+                description: 'Développement backend et APIs',
+                icon: 'fab fa-node-js',
+                keywords: ['nodejs', 'python', 'backend', 'api', 'serveur'],
+                section: 'competences',
+                type: 'skill'
+            },
+            {
+                title: 'Bases de données & Cloud',
+                description: 'MongoDB, Docker, AWS',
+                icon: 'fas fa-database',
+                keywords: ['mongodb', 'docker', 'aws', 'base de données', 'cloud'],
+                section: 'competences',
+                type: 'skill'
+            }
+        ];
+
+        let currentResults = [];
+        let selectedIndex = -1;
+        let searchResultsContainer = null;
+
+        // Créer le conteneur de résultats
+        function createSearchResults() {
+            if (!searchResultsContainer) {
+                searchResultsContainer = document.createElement('div');
+                searchResultsContainer.className = 'search-results';
+                document.querySelector('.search-bar').appendChild(searchResultsContainer);
+            }
+            return searchResultsContainer;
+        }
+
+        function performSearch(query) {
+            if (!query.trim()) {
+                hideSearchResults();
+                return;
+            }
+
+            currentResults = searchableItems.filter(item => 
+                item.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(query.toLowerCase())
+                ) || item.title.toLowerCase().includes(query.toLowerCase()) ||
+                item.description.toLowerCase().includes(query.toLowerCase())
+            );
+
+            displaySearchResults();
+        }
+
+        function displaySearchResults() {
+            const resultsContainer = createSearchResults();
+            resultsContainer.innerHTML = '';
+            selectedIndex = -1;
+
+            if (currentResults.length === 0) {
+                resultsContainer.innerHTML = '<div class="search-no-results">Aucun résultat trouvé</div>';
+                resultsContainer.style.display = 'block';
+                return;
+            }
+
+            currentResults.forEach((result, index) => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <i class="${result.icon} search-result-icon"></i>
+                    <div class="search-result-content">
+                        <div class="search-result-title">${result.title}</div>
+                        <div class="search-result-description">${result.description}</div>
+                    </div>
+                `;
+                
+                resultItem.addEventListener('click', () => navigateToResult(result));
+                resultItem.addEventListener('mouseenter', () => {
+                    clearSelection();
+                    selectedIndex = index;
+                    resultItem.classList.add('selected');
+                });
+                
+                resultsContainer.appendChild(resultItem);
+            });
+
+            resultsContainer.style.display = 'block';
+        }
+
+        function hideSearchResults() {
+            if (searchResultsContainer) {
+                searchResultsContainer.style.display = 'none';
+            }
+            selectedIndex = -1;
+        }
+
+        function clearSelection() {
+            document.querySelectorAll('.search-result-item.selected').forEach(item => {
+                item.classList.remove('selected');
+            });
+        }
+
+        function navigateToResult(result) {
+            // Naviguer vers la section appropriée
+            const navItem = document.querySelector(`[data-section="${result.section}"]`);
+            if (navItem && navItem.classList.contains('nav-item')) {
+                navItem.click();
+            }
+            
+            // Fermer les résultats de recherche
+            hideSearchResults();
+            searchInput.blur();
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', (e) => {
+            performSearch(e.target.value.trim());
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (currentResults.length === 0) return;
+
+            switch(e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    clearSelection();
+                    selectedIndex = Math.min(selectedIndex + 1, currentResults.length - 1);
+                    if (selectedIndex >= 0) {
+                        document.querySelectorAll('.search-result-item')[selectedIndex].classList.add('selected');
+                    }
+                    break;
+                    
+                case 'ArrowUp':
+                    e.preventDefault();
+                    clearSelection();
+                    selectedIndex = Math.max(selectedIndex - 1, -1);
+                    if (selectedIndex >= 0) {
+                        document.querySelectorAll('.search-result-item')[selectedIndex].classList.add('selected');
+                    }
+                    break;
+                    
+                case 'Enter':
+                    e.preventDefault();
+                    if (selectedIndex >= 0 && currentResults[selectedIndex]) {
+                        navigateToResult(currentResults[selectedIndex]);
+                    }
+                    break;
+                    
+                case 'Escape':
+                    e.preventDefault();
+                    searchInput.value = '';
+                    hideSearchResults();
+                    searchInput.blur();
+                    break;
+            }
+        });
+
+        // Fermer la recherche en cliquant ailleurs
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-bar')) {
+                hideSearchResults();
+            }
+        });
+
+        // Gestion sécurisée du formulaire de contact
+        class ContactForm {
+            constructor() {
+                this.form = document.getElementById('contactForm');
+                this.submitBtn = document.getElementById('submitBtn');
+                this.formStatus = document.getElementById('formStatus');
+                this.isSubmitting = false;
+                this.init();
+            }
+
+            init() {
+                this.form.addEventListener('submit', this.handleSubmit.bind(this));
+                
+                // Validation en temps réel
+                this.form.querySelectorAll('input, textarea').forEach(field => {
+                    field.addEventListener('blur', () => this.validateField(field));
+                    field.addEventListener('input', () => this.clearFieldError(field));
+                });
+            }
+
+            // Validation des champs
+            validateField(field) {
+                const formGroup = field.closest('.form-group');
+                const errorMsg = formGroup.querySelector('.error-message');
+                let isValid = true;
+                let message = '';
+
+                // Nettoyage des classes précédentes
+                formGroup.classList.remove('error', 'success');
+
+                switch(field.name) {
+                    case 'name':
+                        if (!field.value.trim()) {
+                            message = 'Le nom est requis';
+                            isValid = false;
+                        } else if (field.value.trim().length < 2) {
+                            message = 'Le nom doit contenir au moins 2 caractères';
+                            isValid = false;
+                        } else if (!/^[a-zA-ZÀ-ÿ\s-']+$/.test(field.value.trim())) {
+                            message = 'Le nom contient des caractères invalides';
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'email':
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!field.value.trim()) {
+                            message = 'L\'email est requis';
+                            isValid = false;
+                        } else if (!emailRegex.test(field.value.trim())) {
+                            message = 'Format d\'email invalide';
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'subject':
+                        if (field.value.trim() && field.value.trim().length < 3) {
+                            message = 'Le sujet doit contenir au moins 3 caractères';
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'message':
+                        if (!field.value.trim()) {
+                            message = 'Le message est requis';
+                            isValid = false;
+                        } else if (field.value.trim().length < 10) {
+                            message = 'Le message doit contenir au moins 10 caractères';
+                            isValid = false;
+                        }
+                        break;
+                }
+
+                if (!isValid) {
+                    formGroup.classList.add('error');
+                    errorMsg.textContent = message;
+                    errorMsg.style.display = 'block';
+                } else if (field.value.trim()) {
+                    formGroup.classList.add('success');
+                    errorMsg.style.display = 'none';
+                }
+
+                return isValid;
+            }
+
+            clearFieldError(field) {
+                const formGroup = field.closest('.form-group');
+                const errorMsg = formGroup.querySelector('.error-message');
+                formGroup.classList.remove('error');
+                errorMsg.style.display = 'none';
+            }
+
+            // Validation complète du formulaire
+            validateForm() {
+                const fields = this.form.querySelectorAll('input[required], textarea[required]');
+                let isValid = true;
+
+                fields.forEach(field => {
+                    if (!this.validateField(field)) {
+                        isValid = false;
+                    }
+                });
+
+                return isValid;
+            }
+
+            // Nettoyage et sanitisation des données
+            sanitizeData(data) {
+                const sanitized = {};
+                
+                // Vérification anti-spam (honeypot)
+                if (data.website) {
+                    throw new Error('Spam détecté');
+                }
+
+                // Nettoyage des champs
+                sanitized.name = data.name.trim().substring(0, 100);
+                sanitized.email = data.email.trim().toLowerCase().substring(0, 254);
+                sanitized.subject = data.subject ? data.subject.trim().substring(0, 200) : '';
+                sanitized.message = data.message.trim().substring(0, 2000);
+
+                // Validation supplémentaire
+                if (!sanitized.name || !sanitized.email || !sanitized.message) {
+                    throw new Error('Données manquantes');
+                }
+
+                // Protection XSS basique
+                Object.keys(sanitized).forEach(key => {
+                    sanitized[key] = sanitized[key]
+                        .replace(/[<>]/g, '')
+                        .replace(/javascript:/gi, '')
+                        .replace(/on\w+=/gi, '');
+                });
+
+                return sanitized;
+            }
+
+            // Simulation d'envoi (remplacer par votre endpoint)
+            async simulateSubmit(data) {
+                // Simulation d'un délai réseau
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Simulation d'un succès (90% de chance)
+                if (Math.random() > 0.1) {
+                    return { success: true, message: 'Message envoyé avec succès!' };
+                } else {
+                    throw new Error('Erreur réseau temporaire');
+                }
+            }
+
+            // Gestion de l'envoi du formulaire
+            async handleSubmit(e) {
+                e.preventDefault();
+
+                if (this.isSubmitting) return;
+
+                // Validation du formulaire
+                if (!this.validateForm()) {
+                    this.showStatus('error', 'Veuillez corriger les erreurs dans le formulaire');
+                    return;
+                }
+
+                this.isSubmitting = true;
+                this.setSubmitButton(true);
+                this.showStatus('loading', 'Envoi en cours...');
+
+                try {
+                    // Récupération et sanitisation des données
+                    const formData = new FormData(this.form);
+                    const data = Object.fromEntries(formData.entries());
+                    const sanitizedData = this.sanitizeData(data);
+
+                    // Envoi des données (remplacer par votre logique)
+                    const result = await this.simulateSubmit(sanitizedData);
+
+                    if (result.success) {
+                        this.showStatus('success', result.message);
+                        this.form.reset();
+                        this.clearAllErrors();
+                    } else {
+                        throw new Error(result.message || 'Erreur lors de l\'envoi');
+                    }
+
+                } catch (error) {
+                    console.error('Erreur formulaire:', error);
+                    
+                    let errorMessage = 'Une erreur est survenue lors de l\'envoi';
+                    if (error.message === 'Spam détecté') {
+                        errorMessage = 'Soumission invalide détectée';
+                    } else if (error.message.includes('réseau')) {
+                        errorMessage = 'Erreur réseau. Veuillez réessayer';
+                    }
+                    
+                    this.showStatus('error', errorMessage);
+                } finally {
+                    this.isSubmitting = false;
+                    this.setSubmitButton(false);
+                }
+            }
+
+            // Gestion du bouton de soumission
+            setSubmitButton(loading) {
+                const icon = this.submitBtn.querySelector('i');
+                const text = this.submitBtn.querySelector('span');
+
+                if (loading) {
+                    this.submitBtn.disabled = true;
+                    icon.className = 'loading-spinner';
+                    text.textContent = 'Envoi en cours...';
+                } else {
+                    this.submitBtn.disabled = false;
+                    icon.className = 'fas fa-paper-plane';
+                    text.textContent = 'Envoyer le message';
+                }
+            }
+
+            // Affichage des messages de statut
+            showStatus(type, message) {
+                this.formStatus.className = `form-status ${type}`;
+                this.formStatus.textContent = message;
+                this.formStatus.style.display = 'block';
+
+                // Auto-hide après 5 secondes pour les succès
+                if (type === 'success') {
+                    setTimeout(() => {
+                        this.formStatus.style.display = 'none';
+                    }, 5000);
+                }
+            }
+
+            // Nettoyage des erreurs
+            clearAllErrors() {
+                this.form.querySelectorAll('.form-group').forEach(group => {
+                    group.classList.remove('error', 'success');
+                    group.querySelector('.error-message').style.display = 'none';
+                });
+            }
+        }
+
+        // Initialisation des formulaires (desktop et mobile)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Desktop form
+            if (document.getElementById('contactForm')) {
+                new ContactForm();
+            }
+            // Mobile form
+            if (document.getElementById('mobileContactForm')) {
+                new MobileContactForm();
+            }
+        });
+
+        // Mobile Contact Form Class (extends desktop functionality)
+        class MobileContactForm extends ContactForm {
+            constructor() {
+                super();
+                this.form = document.getElementById('mobileContactForm');
+                this.submitBtn = document.getElementById('mobileSubmitBtn');
+                this.formStatus = document.getElementById('mobileFormStatus');
+                this.init();
+            }
+        }
+
+        // Gestion des statistiques rotatives
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = document.querySelectorAll('.rotating-stat');
+            const dots = document.querySelectorAll('.stat-dot');
+            let currentStat = 0;
+            let autoRotateInterval;
+
+            function showStat(index) {
+                // Masquer toutes les stats
+                stats.forEach(stat => stat.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Afficher la stat sélectionnée
+                if (stats[index]) {
+                    stats[index].classList.add('active');
+                    dots[index].classList.add('active');
+                    currentStat = index;
+                }
+            }
+
+            function nextStat() {
+                currentStat = (currentStat + 1) % stats.length;
+                showStat(currentStat);
+            }
+
+            function startAutoRotate() {
+                clearInterval(autoRotateInterval);
+                autoRotateInterval = setInterval(nextStat, 3000); // Change toutes les 3 secondes
+            }
+
+            function stopAutoRotate() {
+                clearInterval(autoRotateInterval);
+            }
+
+            // Gestion des clics sur les dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showStat(index);
+                    stopAutoRotate();
+                    // Redémarrer l'auto-rotation après 5 secondes
+                    setTimeout(startAutoRotate, 5000);
+                });
+            });
+
+            // Initialiser
+            showStat(0);
+            startAutoRotate();
+
+            // Pause au hover
+            const statsContainer = document.querySelector('.stats-simple');
+            if (statsContainer) {
+                statsContainer.addEventListener('mouseenter', stopAutoRotate);
+                statsContainer.addEventListener('mouseleave', startAutoRotate);
+            }
+        });
+
+        // Effets hover pour les boutons
+        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+    <script src="timeline.js"></script>
+</body>
+</html>
