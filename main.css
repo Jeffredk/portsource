@@ -48,7 +48,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 20px;
     transition: var(--transition);
 }
@@ -1389,18 +1389,19 @@ body.dark-mode p[style*="color: rgba(44,44,44,0.7)"] {
 /* Mobile Navigation */
 .mobile-nav {
     position: fixed;
-    bottom: env(safe-area-inset-bottom, 0);
+    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     border-top: 1px solid var(--glass-border);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0));
-    transform: translateY(calc(-1 * env(safe-area-inset-bottom, 0)));
-    z-index: 1000;
+    padding: 8px 10px;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 9999;
     height: 70px;
 }
 
