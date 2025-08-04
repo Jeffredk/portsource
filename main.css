@@ -45,6 +45,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100dvh;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
@@ -1348,7 +1352,7 @@ body.dark-mode p[style*="color: rgba(44,44,44,0.7)"] {
 .mobile-main-content {
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 90px;
+    padding-bottom: 80px;
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
 }
@@ -1862,4 +1866,3 @@ body.dark-mode .mobile-timeline-year {
 /* ===================================
    FIN DU CSS ORGANISÉ
    =================================== */
-   
