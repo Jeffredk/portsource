@@ -28,7 +28,7 @@
     --bgtier-color: #e9ecef;
     --container-color: #ffffff;
     
-    /* Effets de verre */   
+    /* Effets glass */   
     --glass-bg: rgba(0, 0, 0, 0.05);
     --glass-border: rgba(0, 0, 0, 0.1);
     
@@ -624,6 +624,7 @@ body {
 .skill-item-mini span {
     color: var(--primary-color);
     font-weight: 500;
+    font-size: 20px;
 }
 
 /* Section Contact */
@@ -1056,7 +1057,7 @@ body.dark-mode {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --primary-color: #f2ddcc;
     --secondary-color: #101524;
-    --component-color: #1d2439;
+    --component-color: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --bgtier-color: #12192e;
     --container-color: #0e121f;
     --glass-bg: rgba(255, 255, 255, 0.1);
@@ -1352,7 +1353,7 @@ body.dark-mode p[style*="color: rgba(44,44,44,0.7)"] {
 .mobile-main-content {
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 150px;
+    padding-bottom: 90px;
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
 }
@@ -1682,6 +1683,9 @@ body.dark-mode p[style*="color: rgba(44,44,44,0.7)"] {
 }
 
 /* Dark mode adjustments pour mobile */
+body.dark-mode .mobile-layout{
+    background: var(--component-color);
+}
 body.dark-mode .mobile-header {
     background: var(--glass-bg);
 }
