@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div class="cursor-bg"></div>
 
     <!-- Desktop Layout -->
     <div class="app-container desktop-layout">
@@ -1518,6 +1519,189 @@
             });
         });
     </script>
-    <script src="timeline.js"></script>
+    <script>
+        let isActive = false;
+        let activeTimeout;
+        let shapes = [];
+        let trailShapes = [];
+        let mouseCursor;
+        let colorIndex = 0;
+        
+        // Couleurs inspirées de l'image
+        const colors = [
+            { r: 255, g: 120, b: 150 }, // Rose/rouge
+            { r: 150, g: 180, b: 255 }, // Bleu clair
+            { r: 255, g: 200, b: 120 }, // Orange/jaune
+            { r: 200, g: 150, b: 255 }, // Violet
+            { r: 120, g: 255, b: 180 }, // Vert menthe
+            { r: 255, g: 150, b: 120 }, // Orange/coral
+        ];
+
+        // Créer le curseur coloré
+        function createMouseCursor() {
+            mouseCursor = document.createElement('div');
+            mouseCursor.className = 'mouse-cursor';
+            document.body.appendChild(mouseCursor);
+            updateCursorColor();
+        }
+
+        // Mettre à jour la couleur du curseur
+        function updateCursorColor() {
+            const color = colors[colorIndex];
+            mouseCursor.style.background = `radial-gradient(circle, rgba(${color.r}, ${color.g}, ${color.b}, 0.8) 0%, rgba(${color.r}, ${color.g}, ${color.b}, 0.4) 70%, transparent 100%)`;
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        // Initialiser le curseur au chargement
+        window.addEventListener('load', () => {
+            createMouseCursor();
+        });
+
+        document.addEventListener('click', (e) => {
+            // Changer la couleur du curseur à chaque clic
+            updateCursorColor();
+            activateEffect(e.clientX, e.clientY);
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            // Mettre à jour la position du curseur coloré
+            if (mouseCursor) {
+                mouseCursor.style.left = (e.clientX - 10) + 'px';
+                mouseCursor.style.top = (e.clientY - 10) + 'px';
+            }
+            
+            if (isActive) {
+                createTrailShape(e.clientX, e.clientY);
+            }
+        });
+
+        function activateEffect(x, y) {
+            isActive = true;
+            
+            // Créer plusieurs formes principales
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    createMainShape(x, y);
+                }, i * 100);
+            }
+            
+            // Désactiver après 1 seconde
+            clearTimeout(activeTimeout);
+            activeTimeout = setTimeout(() => {
+                isActive = false;
+                fadeOutAllShapes();
+            }, 1000);
+        }
+
+        function createMainShape(centerX, centerY) {
+            const shape = document.createElement('div');
+            shape.className = 'shape';
+            
+            // Taille aléatoire entre 50 et 200px
+            const size = Math.random() * 50 + 150;
+            
+            // Position aléatoire autour du clic
+            const offsetX = (Math.random() - 0.5) * 200;
+            const offsetY = (Math.random() - 0.5) * 200;
+            const x = centerX + offsetX;
+            const y = centerY + offsetY;
+            
+            // Couleur aléatoire avec gradient
+            const color1 = colors[Math.floor(Math.random() * colors.length)];
+            const color2 = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Forme organique aléatoire
+            const borderRadius = generateOrganicRadius();
+            
+            shape.style.left = (x - size/2) + 'px';
+            shape.style.top = (y - size/2) + 'px';
+            shape.style.width = size + 'px';
+            shape.style.height = size + 'px';
+            shape.style.borderRadius = borderRadius;
+            shape.style.background = `radial-gradient(ellipse at ${Math.random() * 100}% ${Math.random() * 100}%, 
+                rgba(${color1.r}, ${color1.g}, ${color1.b}, 0.8) 0%,
+                rgba(${color2.r}, ${color2.g}, ${color2.b}, 0.6) 60%,
+                transparent 100%)`;
+            
+            document.body.appendChild(shape);
+            shapes.push(shape);
+            
+            // Animation d'apparition
+            setTimeout(() => {
+                shape.classList.add('active');
+            }, 50);
+        }
+
+        function createTrailShape(x, y) {
+            const shape = document.createElement('div');
+            shape.className = 'trail-shape';
+            
+            // Petite forme pour le trail
+            const size = Math.random() * 80 + 40;
+            
+            // Léger décalage aléatoire
+            const offsetX = (Math.random() - 0.5) * 50;
+            const offsetY = (Math.random() - 0.5) * 50;
+            
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const borderRadius = generateOrganicRadius();
+            
+            shape.style.left = (x + offsetX - size/2) + 'px';
+            shape.style.top = (y + offsetY - size/2) + 'px';
+            shape.style.width = size + 'px';
+            shape.style.height = size + 'px';
+            shape.style.borderRadius = borderRadius;
+            shape.style.background = `radial-gradient(ellipse at 50% 50%, 
+                rgba(${color.r}, ${color.g}, ${color.b}, 0.6) 0%,
+                rgba(${color.r}, ${color.g}, ${color.b}, 0.3) 50%,
+                transparent 100%)`;
+            
+            document.body.appendChild(shape);
+            trailShapes.push(shape);
+            
+            // Animation de fade out
+            shape.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            
+            setTimeout(() => {
+                shape.style.opacity = '0';
+                shape.style.transform = 'scale(1.3)';
+            }, 100);
+            
+            // Suppression
+            setTimeout(() => {
+                if (shape.parentNode) {
+                    shape.parentNode.removeChild(shape);
+                    trailShapes = trailShapes.filter(s => s !== shape);
+                }
+            }, 900);
+        }
+
+        function generateOrganicRadius() {
+            // Génère des border-radius organiques aléatoires
+            const values = [];
+            for (let i = 0; i < 8; i++) {
+                values.push(Math.random() * 50 + 25 + '%');
+            }
+            return `${values[0]} ${values[1]} ${values[2]} ${values[3]} / ${values[4]} ${values[5]} ${values[6]} ${values[7]}`;
+        }
+
+        function fadeOutAllShapes() {
+            shapes.forEach(shape => {
+                shape.classList.add('fade-out');
+                setTimeout(() => {
+                    if (shape.parentNode) {
+                        shape.parentNode.removeChild(shape);
+                    }
+                }, 1000);
+            });
+            shapes = [];
+        }
+
+        // Nettoyage périodique
+        setInterval(() => {
+            shapes = shapes.filter(shape => document.body.contains(shape));
+            trailShapes = trailShapes.filter(shape => document.body.contains(shape));
+        }, 2000);
+    </script>
 </body>
 </html>

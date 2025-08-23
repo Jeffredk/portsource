@@ -1,3 +1,30 @@
+:root {
+    /* Couleurs principales */
+    --primary-color: #2c2c2c;
+    --secondary-color: #ffffff;
+    --component-color: #f8f9fa;
+    --bgtier-color: #e9ecef;
+    --container-color: #ffffff;
+    
+    /* Effets glass */   
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --primary-color: #f2ddcc;
+    --secondary-color: #101524;
+    --component-color: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --bgtier-color: #12192e;
+    --container-color: #0e121f;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
 /* ===== TIMELINE CIRCULAIRE ===== */
 .timeline-section.active {
     display: flex !important;
