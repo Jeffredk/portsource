@@ -89,7 +89,7 @@
             <!-- Section Accueil -->
             <div class="content-section hero-section active" data-section="accueil">
                 <div class="hero-content">
-                    <h1>Développeur Full-Stack</h1>
+                    <h1>Développeur Full-Stack <br> & <br> Mobile</h1>
                     <p class="subtitle">
                         Je crée des expériences numériques modernes et performantes. 
                         Passionné par le développement web et mobile, je transforme vos idées en solutions innovantes.
@@ -99,7 +99,7 @@
                             <i class="fas fa-eye"></i>
                             Voir mes projets
                         </button>
-                        <button class="btn-secondary">
+                        <button id="downloadCV" class="btn-secondary">
                             <i class="fas fa-download"></i>
                             Télécharger CV
                         </button>
@@ -112,16 +112,15 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h2>À propos de moi</h2>
-                        <p> Je suis Jeffred Kouassi Jeune développeur passionné par les TICS non loin de moi les insectes (Ha ha ha) mais plutôt tout ce qui relève de la Technologie.</p>
-                        <p>Mon expertise couvre l'ensemble du stack technologique, du front-end au back-end, avec une attention particulière portée  au développement front et à l'expérience utilisateur.</p>
-                        <p>Je suis constamment à la recherche de nouveaux défis techniques et j'aime collaborer avec des équipes dynamiques pour créer des solutions innovantes ainsi qu'à plus et mieux apprendre auprès des autres.</p>
-                        <p>L'une de mes plus grandes lignes directives de vie est :</p>
+                        <p> Je suis <u><b>Jeffred Kouassi</b></u> Jeune développeur passionné par les TICS non loin de moi les insectes (Ha ha ha) mais plutôt tout ce qui relève de la Technologie.</p>
+                        <p>Mes compétences couvrent l'ensemble du stack technologique, du front-end au back-end, mais avec une attention particulière portée  au développement front et à l'expérience utilisateur.</p>
+                        <p>Je suis mu par la recherche de nouveaux défis techniques et par le travail en équipe, qui me permet à la fois de contribuer à des solutions innovantes et continuer à apprendre auprès des autres.<br>L'une de mes plus grandes lignes directives de vie est :</p>
                         <p><em>"Arrange toi à être toujours meilleur qu'hier"</em></p>
                     </div>
                     <div class="about-avatar">
                         <div class="avatar-img">JK</div>
                         <h3 style="color: var(--primary-color); margin: 0;">Jeffred Kouassi</h3>
-                        <p style="color: rgba(44,44,44,0.7); margin: 5px 0 0 0;">Développeur Full-Stack</p>
+                        <p style="color: rgba(44,44,44,0.7); margin: 5px 0 0 0;">Développeur Full-Stack & Mobile</p>
                     </div>
                 </div>
             </div>
@@ -431,7 +430,7 @@
             <!-- Section Accueil -->
             <section class="mobile-section hero-section active" data-section="accueil">
                 <div class="hero-content">
-                    <h1>Développeur Full-Stack</h1>
+                    <h1>Développeur Full-Stack <br> & <br> Mobile</h1>
                     <p class="subtitle">
                         Je crée des expériences numériques modernes et performantes. 
                         Passionné par le développement web et mobile, je transforme vos idées en solutions innovantes.
@@ -441,7 +440,7 @@
                             <i class="fas fa-eye"></i>
                             Voir mes projets
                         </button>
-                        <button class="btn-secondary">
+                        <button id="downloadCV" class="btn-secondary">
                             <i class="fas fa-download"></i>
                             Télécharger CV
                         </button>
@@ -454,16 +453,15 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h2>À propos de moi</h2>
-                        <p> Je suis Jeffred Kouassi Jeune développeur passionné par les TICS non loin de moi les insectes (Ha ha ha) mais plutôt tout ce qui relève de la Technologie.</p>
-                        <p>Mon expertise couvre l'ensemble du stack technologique, du front-end au back-end, avec une attention particulière portée  au développement front et à l'expérience utilisateur.</p>
-                        <p>Je suis constamment à la recherche de nouveaux défis techniques et j'aime collaborer avec des équipes dynamiques pour créer des solutions innovantes ainsi qu'à plus et mieux apprendre auprès des autres.</p>
-                        <p>L'une de mes plus grandes lignes directives de vie est :</p>
+                        <p> Je suis <u><b>Jeffred Kouassi</b></u> Jeune développeur passionné par les TICS non loin de moi les insectes (Ha ha ha) mais plutôt tout ce qui relève de la Technologie.</p>
+                        <p>Mes compétences couvrent l'ensemble du stack technologique, du front-end au back-end, mais avec une attention particulière portée  au développement front et à l'expérience utilisateur.</p>
+                        <p>Je suis mu par la recherche de nouveaux défis techniques et par le travail en équipe, qui me permet à la fois de contribuer à des solutions innovantes et continuer à apprendre auprès des autres.<br>L'une de mes plus grandes lignes directives de vie est :</p>
                         <p><em>"Arrange toi à être toujours meilleur qu'hier"</em></p>
                     </div>
                     <div class="about-avatar">
                         <div class="avatar-img">JK</div>
                         <h3 style="color: var(--primary-color); margin: 0;">Jeffred Kouassi</h3>
-                        <p style="color: rgba(44,44,44,0.7); margin: 5px 0 0 0;">Développeur Full-Stack</p>
+                        <p style="color: rgba(44,44,44,0.7); margin: 5px 0 0 0;">Développeur Full-Stack & Mobile</p>
                     </div>
                 </div>
             </section>
@@ -1190,6 +1188,16 @@
                     }
                 });
             }
+
+            //Téléchargement CV
+            document.getElementById('downloadCV').addEventListener('click', () => {
+                const a = document.createElement('a');
+                a.href = 'Assets/ressources/CV-JEFFRED_KOUASSI.pdf'; // chemin vers ton fichier CV
+                a.download = 'Jeffred_Kouassi-CV.pdf'; // nom suggéré au téléchargement
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            });
 
             // Fermer la recherche en cliquant ailleurs
             document.addEventListener('click', (e) => {
