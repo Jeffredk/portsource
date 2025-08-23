@@ -275,37 +275,41 @@
             <!-- Section Contact -->
             <div class="content-section contact-section" data-section="contact">
                 <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px;">Contactez-moi</h2>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="mobileContactForm" action="https://formspree.io/f/xwpneewe" method="POST">
                     <div class="form-group">
-                        <label for="name">Nom *</label>
-                        <input type="text" id="name" name="name" required placeholder="Votre nom complet" maxlength="100">
+                        <label for="mobile-name">Nom *</label>
+                        <input type="text" id="mobile-name" name="name" required placeholder="Votre nom complet" maxlength="100">
                         <div class="error-message"></div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="votre@email.com" maxlength="254">
+                        <label for="mobile-email">Email *</label>
+                        <input type="email" id="mobile-email" name="_replyto" required placeholder="votre@email.com" maxlength="254">
                         <div class="error-message"></div>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Sujet</label>
-                        <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" maxlength="200">
+                        <label for="mobile-subject">Sujet</label>
+                        <input type="text" id="mobile-subject" name="subject" placeholder="Sujet de votre message" maxlength="200">
                         <div class="error-message"></div>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Votre message..." maxlength="2000"></textarea>
+                        <label for="mobile-message">Message *</label>
+                        <textarea id="mobile-message" name="message" rows="5" required placeholder="Votre message..." maxlength="2000"></textarea>
                         <div class="error-message"></div>
                     </div>
                     
-                    <!-- Honeypot pour anti-spam -->
-                    <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+                    <!-- Champ anti-spam (honeypot) -->
+                    <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off">
                     
-                    <button type="submit" class="btn-primary" id="submitBtn" style="width: 100%;">
+                    <!-- Configuration Formspree -->
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html">
+                    <input type="hidden" name="_subject" value="Portfolio : nouveau message de contact">
+                    
+                    <button type="submit" class="btn-primary" id="mobileSubmitBtn" style="width: 100%;">
                         <i class="fas fa-paper-plane"></i>
                         <span>Envoyer le message</span>
                     </button>
                     
-                    <div class="form-status" id="formStatus"></div>
+                    <div class="form-status" id="mobileFormStatus"></div>
                 </form>
             </div>
         </main>
@@ -675,7 +679,7 @@
             <!-- Section Contact (moved before footer) -->
             <section class="mobile-section contact-section" data-section="contact">
                 <h2 style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px;">Contactez-moi</h2>
-                <form class="contact-form" id="mobileContactForm">
+                <form class="contact-form" id="mobileContactForm" action="https://formspree.io/f/xwpneewe" method="POST">
                     <div class="form-group">
                         <label for="mobile-name">Nom *</label>
                         <input type="text" id="mobile-name" name="name" required placeholder="Votre nom complet" maxlength="100">
@@ -683,7 +687,7 @@
                     </div>
                     <div class="form-group">
                         <label for="mobile-email">Email *</label>
-                        <input type="email" id="mobile-email" name="email" required placeholder="votre@email.com" maxlength="254">
+                        <input type="email" id="mobile-email" name="_replyto" required placeholder="votre@email.com" maxlength="254">
                         <div class="error-message"></div>
                     </div>
                     <div class="form-group">
@@ -697,7 +701,12 @@
                         <div class="error-message"></div>
                     </div>
                     
-                    <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+                    <!-- Champ anti-spam (honeypot) -->
+                    <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off">
+                    
+                    <!-- Configuration Formspree -->
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html">
+                    <input type="hidden" name="_subject" value="Portfolio : nouveau message de contact">
                     
                     <button type="submit" class="btn-primary" id="mobileSubmitBtn" style="width: 100%;">
                         <i class="fas fa-paper-plane"></i>
@@ -734,974 +743,934 @@
                     <p>&copy; 2025 NanoDev. Tous droits réservés.</p>
                 </div>
             </footer>
-        </main>
+            </main>
 
-        <!-- Mobile Navigation (Bottom) -->
-        <nav class="mobile-nav">
-            <div class="mobile-nav-item active" data-section="accueil">
-                <i class="fa-solid fa-house-user"></i>
-                <span class="nav-label">Accueil</span>
+            <!-- Mobile Navigation (Bottom) -->
+            <nav class="mobile-nav">
+                <div class="mobile-nav-item active" data-section="accueil">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span class="nav-label">Accueil</span>
+                </div>
+                <div class="mobile-nav-item" data-section="apropos">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-label">À propos</span>
+                </div>
+                <div class="mobile-nav-item" data-section="timeline">
+                    <i class="fa-solid fa-timeline"></i>
+                    <span class="nav-label">Timeline</span>
+                </div>
+                <div class="mobile-nav-item" data-section="projets">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="nav-label">Projets</span>
+                </div>
+                <div class="mobile-nav-item" data-section="competences">
+                    <i class="fas fa-code"></i>
+                    <span class="nav-label">Compétences</span>
+                </div>
+                <div class="mobile-nav-item" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-label">Contact</span>
+                </div>
+            </nav>
             </div>
-            <div class="mobile-nav-item" data-section="apropos">
-                <i class="fas fa-user"></i>
-                <span class="nav-label">À propos</span>
-            </div>
-            <div class="mobile-nav-item" data-section="timeline">
-                <i class="fa-solid fa-timeline"></i>
-                <span class="nav-label">Timeline</span>
-            </div>
-            <div class="mobile-nav-item" data-section="projets">
-                <i class="fas fa-briefcase"></i>
-                <span class="nav-label">Projets</span>
-            </div>
-            <div class="mobile-nav-item" data-section="competences">
-                <i class="fas fa-code"></i>
-                <span class="nav-label">Compétences</span>
-            </div>
-            <div class="mobile-nav-item" data-section="contact">
-                <i class="fas fa-envelope"></i>
-                <span class="nav-label">Contact</span>
-            </div>
-        </nav>
-    </div>
 
-    <script>
-        // Theme toggle for desktop
-        const themeToggle = document.getElementById('themeToggle');
-        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-        const body = document.body;
+            <script>
+            // Theme toggle for desktop
+            const themeToggle = document.getElementById('themeToggle');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const body = document.body;
 
-        function toggleTheme() {
-            body.classList.toggle('dark-mode');
-            
-            const desktopIcon = themeToggle?.querySelector('i');
-            const mobileIcon = mobileThemeToggle?.querySelector('i');
-            
-            if (body.classList.contains('dark-mode')) {
-                if (desktopIcon) desktopIcon.classList.replace('fa-moon', 'fa-sun');
-                if (mobileIcon) mobileIcon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                if (desktopIcon) desktopIcon.classList.replace('fa-sun', 'fa-moon');
-                if (mobileIcon) mobileIcon.classList.replace('fa-sun', 'fa-moon');
-            }
-        }
-
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
-        if (mobileThemeToggle) {
-            mobileThemeToggle.addEventListener('click', toggleTheme);
-        }
-
-        // Desktop Navigation
-        const navItems = document.querySelectorAll('.nav-item');
-        const contentSections = document.querySelectorAll('.content-section');
-        
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const targetSection = item.getAttribute('data-section');
+            function toggleTheme() {
+                body.classList.toggle('dark-mode');
                 
-                // Retirer l'état actif de tous les éléments de navigation
-                navItems.forEach(nav => nav.classList.remove('active'));
-                item.classList.add('active');
+                const desktopIcon = themeToggle?.querySelector('i');
+                const mobileIcon = mobileThemeToggle?.querySelector('i');
                 
-                // Cacher toutes les sections
-                contentSections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                // Afficher la section ciblée avec animation
-                const targetElement = document.querySelector(`[data-section="${targetSection}"].content-section`);
-                if (targetElement) {
-                    setTimeout(() => {
-                        targetElement.classList.add('active');
-                    }, 150);
-                }
-            });
-        });
-
-        // Mobile Navigation
-        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
-        const mobileSections = document.querySelectorAll('.mobile-section');
-        const mobileMainContent = document.querySelector('.mobile-main-content');
-        
-        // Function to update active navigation item based on scroll
-        function updateActiveNavOnScroll() {
-            if (!mobileMainContent) return;
-            
-            const scrollTop = mobileMainContent.scrollTop;
-            const viewportHeight = mobileMainContent.clientHeight;
-            
-            let activeSection = null;
-            let maxVisibility = 0;
-            
-            mobileSections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const sectionTop = rect.top + scrollTop;
-                const sectionHeight = section.offsetHeight;
-                
-                // Calculate how much of the section is visible
-                const visibleTop = Math.max(0, Math.min(viewportHeight, rect.bottom));
-                const visibleBottom = Math.max(0, Math.min(viewportHeight, viewportHeight - rect.top));
-                const visibleHeight = Math.max(0, visibleBottom - (viewportHeight - visibleTop));
-                const visibilityRatio = visibleHeight / Math.min(sectionHeight, viewportHeight);
-                
-                if (visibilityRatio > maxVisibility) {
-                    maxVisibility = visibilityRatio;
-                    activeSection = section.getAttribute('data-section');
-                }
-            });
-            
-            if (activeSection) {
-                // Update navigation active states
-                mobileNavItems.forEach(nav => {
-                    nav.classList.remove('active');
-                    const label = nav.querySelector('.nav-label');
-                    label.style.display = 'none';
-                });
-                
-                const activeNav = document.querySelector(`.mobile-nav-item[data-section="${activeSection}"]`);
-                if (activeNav) {
-                    activeNav.classList.add('active');
-                    const activeLabel = activeNav.querySelector('.nav-label');
-                    activeLabel.style.display = 'block';
-                }
-            }
-        }
-        
-        // Throttle scroll events for performance
-        let scrollTimeout;
-        function throttleScroll() {
-            if (scrollTimeout) {
-                clearTimeout(scrollTimeout);
-            }
-            scrollTimeout = setTimeout(updateActiveNavOnScroll, 100);
-        }
-        
-        // Add scroll listener to mobile main content
-        if (mobileMainContent) {
-            mobileMainContent.addEventListener('scroll', throttleScroll);
-        }
-        
-        // Mobile navigation click handlers
-        mobileNavItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetSection = item.getAttribute('data-section');
-                
-                // Find target section and scroll to it
-                const targetElement = document.querySelector(`[data-section="${targetSection}"].mobile-section`);
-                if (targetElement && mobileMainContent) {
-                    targetElement.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Initialize mobile nav labels (only show active)
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set initial active state
-            setTimeout(() => {
-                updateActiveNavOnScroll();
-            }, 500);
-            
-            // Initialize nav labels
-            mobileNavItems.forEach(nav => {
-                const label = nav.querySelector('.nav-label');
-                if (!nav.classList.contains('active')) {
-                    label.style.display = 'none';
-                }
-            });
-        });
-
-        // Animation des barres de progression
-        document.addEventListener('DOMContentLoaded', () => {
-            const progressBars = document.querySelectorAll('.progress-fill');
-            progressBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 500);
-            });
-        });
-
-        // Animation d'apparition des éléments
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Recherche avec liste déroulante
-        const searchInput = document.querySelector('.search-input');
-        const searchableItems = [
-            // Sections principales avec métadonnées complètes
-            {
-                title: 'Accueil',
-                description: 'Page d\'accueil - Développeur Full-Stack',
-                icon: 'fas fa-home',
-                keywords: ['accueil', 'home', 'développeur', 'full-stack', 'portfolio', 'john doe', 'nanodev'],
-                section: 'accueil',
-                type: 'section'
-            },
-            {
-                title: 'À propos',
-                description: 'Présentation et expérience professionnelle',
-                icon: 'fas fa-user',
-                keywords: ['à propos', 'about', 'expérience', 'développeur', 'passionné', 'john doe'],
-                section: 'apropos',
-                type: 'section'
-            },
-            {
-                title: 'Projets',
-                description: 'Portfolio des projets réalisés',
-                icon: 'fas fa-briefcase',
-                keywords: ['projets', 'projects', 'e-commerce', 'portfolio', 'react native', 'dashboard', 'analytics'],
-                section: 'projets',
-                type: 'section'
-            },
-            {
-                title: 'Compétences',
-                description: 'Technologies et outils maîtrisés',
-                icon: 'fas fa-code',
-                keywords: ['compétences', 'skills', 'react', 'vue', 'nodejs', 'python', 'mongodb', 'docker', 'aws', 'git'],
-                section: 'competences',
-                type: 'section'
-            },
-            {
-                title: 'Contact',
-                description: 'Formulaire de contact et informations',
-                icon: 'fas fa-envelope',
-                keywords: ['contact', 'contactez', 'email', 'message', 'formulaire'],
-                section: 'contact',
-                type: 'section'
-            },
-            
-            // Projets spécifiques
-            {
-                title: 'E-commerce Platform',
-                description: 'Plateforme complète avec panier et paiement',
-                icon: 'fas fa-shopping-cart',
-                keywords: ['e-commerce', 'plateforme', 'panier', 'paiement', 'stocks'],
-                section: 'projets',
-                type: 'project'
-            },
-            {
-                title: 'Portfolio Dynamique',
-                description: 'Site vitrine responsive avec animations',
-                icon: 'fas fa-palette',
-                keywords: ['portfolio', 'vitrine', 'responsive', 'animations'],
-                section: 'projets',
-                type: 'project'
-            },
-            {
-                title: 'App Mobile React Native',
-                description: 'Application cross-platform pour gestion des tâches',
-                icon: 'fas fa-mobile-alt',
-                keywords: ['app', 'mobile', 'react native', 'cross-platform', 'tâches'],
-                section: 'projets',
-                type: 'project'
-            },
-            {
-                title: 'Dashboard Analytics',
-                description: 'Interface d\'administration avec graphiques',
-                icon: 'fas fa-chart-bar',
-                keywords: ['dashboard', 'analytics', 'administration', 'graphiques', 'métriques'],
-                section: 'projets',
-                type: 'project'
-            },
-            
-            // Compétences principales
-            {
-                title: 'React & Vue.js',
-                description: 'Frameworks JavaScript modernes',
-                icon: 'fab fa-react',
-                keywords: ['react', 'vue', 'javascript', 'frameworks', 'frontend'],
-                section: 'competences',
-                type: 'skill'
-            },
-            {
-                title: 'Node.js & Python',
-                description: 'Développement backend et APIs',
-                icon: 'fab fa-node-js',
-                keywords: ['nodejs', 'python', 'backend', 'api', 'serveur'],
-                section: 'competences',
-                type: 'skill'
-            },
-            {
-                title: 'Bases de données & Cloud',
-                description: 'MongoDB, Docker, AWS',
-                icon: 'fas fa-database',
-                keywords: ['mongodb', 'docker', 'aws', 'base de données', 'cloud'],
-                section: 'competences',
-                type: 'skill'
-            }
-        ];
-
-        let currentResults = [];
-        let selectedIndex = -1;
-        let searchResultsContainer = null;
-
-        // Créer le conteneur de résultats
-        function createSearchResults() {
-            if (!searchResultsContainer) {
-                searchResultsContainer = document.createElement('div');
-                searchResultsContainer.className = 'search-results';
-                document.querySelector('.search-bar').appendChild(searchResultsContainer);
-            }
-            return searchResultsContainer;
-        }
-
-        function performSearch(query) {
-            if (!query.trim()) {
-                hideSearchResults();
-                return;
-            }
-
-            currentResults = searchableItems.filter(item => 
-                item.keywords.some(keyword => 
-                    keyword.toLowerCase().includes(query.toLowerCase())
-                ) || item.title.toLowerCase().includes(query.toLowerCase()) ||
-                item.description.toLowerCase().includes(query.toLowerCase())
-            );
-
-            displaySearchResults();
-        }
-
-        function displaySearchResults() {
-            const resultsContainer = createSearchResults();
-            resultsContainer.innerHTML = '';
-            selectedIndex = -1;
-
-            if (currentResults.length === 0) {
-                resultsContainer.innerHTML = '<div class="search-no-results">Aucun résultat trouvé</div>';
-                resultsContainer.style.display = 'block';
-                return;
-            }
-
-            currentResults.forEach((result, index) => {
-                const resultItem = document.createElement('div');
-                resultItem.className = 'search-result-item';
-                resultItem.innerHTML = `
-                    <i class="${result.icon} search-result-icon"></i>
-                    <div class="search-result-content">
-                        <div class="search-result-title">${result.title}</div>
-                        <div class="search-result-description">${result.description}</div>
-                    </div>
-                `;
-                
-                resultItem.addEventListener('click', () => navigateToResult(result));
-                resultItem.addEventListener('mouseenter', () => {
-                    clearSelection();
-                    selectedIndex = index;
-                    resultItem.classList.add('selected');
-                });
-                
-                resultsContainer.appendChild(resultItem);
-            });
-
-            resultsContainer.style.display = 'block';
-        }
-
-        function hideSearchResults() {
-            if (searchResultsContainer) {
-                searchResultsContainer.style.display = 'none';
-            }
-            selectedIndex = -1;
-        }
-
-        function clearSelection() {
-            document.querySelectorAll('.search-result-item.selected').forEach(item => {
-                item.classList.remove('selected');
-            });
-        }
-
-        function navigateToResult(result) {
-            // Naviguer vers la section appropriée
-            const navItem = document.querySelector(`[data-section="${result.section}"]`);
-            if (navItem && navItem.classList.contains('nav-item')) {
-                navItem.click();
-            }
-            
-            // Fermer les résultats de recherche
-            hideSearchResults();
-            searchInput.blur();
-        }
-
-        // Event listeners
-        searchInput.addEventListener('input', (e) => {
-            performSearch(e.target.value.trim());
-        });
-
-        searchInput.addEventListener('keydown', (e) => {
-            if (currentResults.length === 0) return;
-
-            switch(e.key) {
-                case 'ArrowDown':
-                    e.preventDefault();
-                    clearSelection();
-                    selectedIndex = Math.min(selectedIndex + 1, currentResults.length - 1);
-                    if (selectedIndex >= 0) {
-                        document.querySelectorAll('.search-result-item')[selectedIndex].classList.add('selected');
-                    }
-                    break;
-                    
-                case 'ArrowUp':
-                    e.preventDefault();
-                    clearSelection();
-                    selectedIndex = Math.max(selectedIndex - 1, -1);
-                    if (selectedIndex >= 0) {
-                        document.querySelectorAll('.search-result-item')[selectedIndex].classList.add('selected');
-                    }
-                    break;
-                    
-                case 'Enter':
-                    e.preventDefault();
-                    if (selectedIndex >= 0 && currentResults[selectedIndex]) {
-                        navigateToResult(currentResults[selectedIndex]);
-                    }
-                    break;
-                    
-                case 'Escape':
-                    e.preventDefault();
-                    searchInput.value = '';
-                    hideSearchResults();
-                    searchInput.blur();
-                    break;
-            }
-        });
-
-        // Fermer la recherche en cliquant ailleurs
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-bar')) {
-                hideSearchResults();
-            }
-        });
-
-        // Gestion sécurisée du formulaire de contact
-        class ContactForm {
-            constructor() {
-                this.form = document.getElementById('contactForm');
-                this.submitBtn = document.getElementById('submitBtn');
-                this.formStatus = document.getElementById('formStatus');
-                this.isSubmitting = false;
-                this.init();
-            }
-
-            init() {
-                this.form.addEventListener('submit', this.handleSubmit.bind(this));
-                
-                // Validation en temps réel
-                this.form.querySelectorAll('input, textarea').forEach(field => {
-                    field.addEventListener('blur', () => this.validateField(field));
-                    field.addEventListener('input', () => this.clearFieldError(field));
-                });
-            }
-
-            // Validation des champs
-            validateField(field) {
-                const formGroup = field.closest('.form-group');
-                const errorMsg = formGroup.querySelector('.error-message');
-                let isValid = true;
-                let message = '';
-
-                // Nettoyage des classes précédentes
-                formGroup.classList.remove('error', 'success');
-
-                switch(field.name) {
-                    case 'name':
-                        if (!field.value.trim()) {
-                            message = 'Le nom est requis';
-                            isValid = false;
-                        } else if (field.value.trim().length < 2) {
-                            message = 'Le nom doit contenir au moins 2 caractères';
-                            isValid = false;
-                        } else if (!/^[a-zA-ZÀ-ÿ\s-']+$/.test(field.value.trim())) {
-                            message = 'Le nom contient des caractères invalides';
-                            isValid = false;
-                        }
-                        break;
-
-                    case 'email':
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!field.value.trim()) {
-                            message = 'L\'email est requis';
-                            isValid = false;
-                        } else if (!emailRegex.test(field.value.trim())) {
-                            message = 'Format d\'email invalide';
-                            isValid = false;
-                        }
-                        break;
-
-                    case 'subject':
-                        if (field.value.trim() && field.value.trim().length < 3) {
-                            message = 'Le sujet doit contenir au moins 3 caractères';
-                            isValid = false;
-                        }
-                        break;
-
-                    case 'message':
-                        if (!field.value.trim()) {
-                            message = 'Le message est requis';
-                            isValid = false;
-                        } else if (field.value.trim().length < 10) {
-                            message = 'Le message doit contenir au moins 10 caractères';
-                            isValid = false;
-                        }
-                        break;
-                }
-
-                if (!isValid) {
-                    formGroup.classList.add('error');
-                    errorMsg.textContent = message;
-                    errorMsg.style.display = 'block';
-                } else if (field.value.trim()) {
-                    formGroup.classList.add('success');
-                    errorMsg.style.display = 'none';
-                }
-
-                return isValid;
-            }
-
-            clearFieldError(field) {
-                const formGroup = field.closest('.form-group');
-                const errorMsg = formGroup.querySelector('.error-message');
-                formGroup.classList.remove('error');
-                errorMsg.style.display = 'none';
-            }
-
-            // Validation complète du formulaire
-            validateForm() {
-                const fields = this.form.querySelectorAll('input[required], textarea[required]');
-                let isValid = true;
-
-                fields.forEach(field => {
-                    if (!this.validateField(field)) {
-                        isValid = false;
-                    }
-                });
-
-                return isValid;
-            }
-
-            // Nettoyage et sanitisation des données
-            sanitizeData(data) {
-                const sanitized = {};
-                
-                // Vérification anti-spam (honeypot)
-                if (data.website) {
-                    throw new Error('Spam détecté');
-                }
-
-                // Nettoyage des champs
-                sanitized.name = data.name.trim().substring(0, 100);
-                sanitized.email = data.email.trim().toLowerCase().substring(0, 254);
-                sanitized.subject = data.subject ? data.subject.trim().substring(0, 200) : '';
-                sanitized.message = data.message.trim().substring(0, 2000);
-
-                // Validation supplémentaire
-                if (!sanitized.name || !sanitized.email || !sanitized.message) {
-                    throw new Error('Données manquantes');
-                }
-
-                // Protection XSS basique
-                Object.keys(sanitized).forEach(key => {
-                    sanitized[key] = sanitized[key]
-                        .replace(/[<>]/g, '')
-                        .replace(/javascript:/gi, '')
-                        .replace(/on\w+=/gi, '');
-                });
-
-                return sanitized;
-            }
-
-            // Simulation d'envoi (remplacer par votre endpoint)
-            async simulateSubmit(data) {
-                // Simulation d'un délai réseau
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
-                // Simulation d'un succès (90% de chance)
-                if (Math.random() > 0.1) {
-                    return { success: true, message: 'Message envoyé avec succès!' };
+                if (body.classList.contains('dark-mode')) {
+                    if (desktopIcon) desktopIcon.classList.replace('fa-moon', 'fa-sun');
+                    if (mobileIcon) mobileIcon.classList.replace('fa-moon', 'fa-sun');
                 } else {
-                    throw new Error('Erreur réseau temporaire');
+                    if (desktopIcon) desktopIcon.classList.replace('fa-sun', 'fa-moon');
+                    if (mobileIcon) mobileIcon.classList.replace('fa-sun', 'fa-moon');
                 }
             }
 
-            // Gestion de l'envoi du formulaire
-            async handleSubmit(e) {
-                e.preventDefault();
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', toggleTheme);
+            }
 
-                if (this.isSubmitting) return;
+            // Desktop Navigation
+            const navItems = document.querySelectorAll('.nav-item');
+            const contentSections = document.querySelectorAll('.content-section');
 
-                // Validation du formulaire
-                if (!this.validateForm()) {
-                    this.showStatus('error', 'Veuillez corriger les erreurs dans le formulaire');
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const targetSection = item.getAttribute('data-section');
+                    
+                    // Retirer l'état actif de tous les éléments de navigation
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    // Cacher toutes les sections
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Afficher la section ciblée avec animation
+                    const targetElement = document.querySelector(`[data-section="${targetSection}"].content-section`);
+                    if (targetElement) {
+                        setTimeout(() => {
+                            targetElement.classList.add('active');
+                        }, 150);
+                    }
+                });
+            });
+
+            // Mobile Navigation
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            const mobileSections = document.querySelectorAll('.mobile-section');
+            const mobileMainContent = document.querySelector('.mobile-main-content');
+
+            // Function to update active navigation item based on scroll
+            function updateActiveNavOnScroll() {
+                if (!mobileMainContent) return;
+                
+                const scrollTop = mobileMainContent.scrollTop;
+                const viewportHeight = mobileMainContent.clientHeight;
+                
+                let activeSection = null;
+                let maxVisibility = 0;
+                
+                mobileSections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + scrollTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    // Calculate how much of the section is visible
+                    const visibleTop = Math.max(0, Math.min(viewportHeight, rect.bottom));
+                    const visibleBottom = Math.max(0, Math.min(viewportHeight, viewportHeight - rect.top));
+                    const visibleHeight = Math.max(0, visibleBottom - (viewportHeight - visibleTop));
+                    const visibilityRatio = visibleHeight / Math.min(sectionHeight, viewportHeight);
+                    
+                    if (visibilityRatio > maxVisibility) {
+                        maxVisibility = visibilityRatio;
+                        activeSection = section.getAttribute('data-section');
+                    }
+                });
+                
+                if (activeSection) {
+                    // Update navigation active states
+                    mobileNavItems.forEach(nav => {
+                        nav.classList.remove('active');
+                        const label = nav.querySelector('.nav-label');
+                        label.style.display = 'none';
+                    });
+                    
+                    const activeNav = document.querySelector(`.mobile-nav-item[data-section="${activeSection}"]`);
+                    if (activeNav) {
+                        activeNav.classList.add('active');
+                        const activeLabel = activeNav.querySelector('.nav-label');
+                        activeLabel.style.display = 'block';
+                    }
+                }
+            }
+
+            // Throttle scroll events for performance
+            let scrollTimeout;
+            function throttleScroll() {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(updateActiveNavOnScroll, 100);
+            }
+
+            // Add scroll listener to mobile main content
+            if (mobileMainContent) {
+                mobileMainContent.addEventListener('scroll', throttleScroll);
+            }
+
+            // Mobile navigation click handlers
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetSection = item.getAttribute('data-section');
+                    
+                    // Find target section and scroll to it
+                    const targetElement = document.querySelector(`[data-section="${targetSection}"].mobile-section`);
+                    if (targetElement && mobileMainContent) {
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Initialize mobile nav labels (only show active)
+            document.addEventListener('DOMContentLoaded', () => {
+                // Set initial active state
+                setTimeout(() => {
+                    updateActiveNavOnScroll();
+                }, 500);
+                
+                // Initialize nav labels
+                mobileNavItems.forEach(nav => {
+                    const label = nav.querySelector('.nav-label');
+                    if (!nav.classList.contains('active')) {
+                        label.style.display = 'none';
+                    }
+                });
+            });
+
+            // Animation des barres de progression
+            document.addEventListener('DOMContentLoaded', () => {
+                const progressBars = document.querySelectorAll('.progress-fill');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 500);
+                });
+            });
+
+            // Animation d'apparition des éléments
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Recherche avec liste déroulante
+            const searchInput = document.querySelector('.search-input');
+            const searchableItems = [
+                // Sections principales avec métadonnées complètes
+                {
+                    title: 'Accueil',
+                    description: 'Page d\'accueil - Développeur Full-Stack',
+                    icon: 'fas fa-home',
+                    keywords: ['accueil', 'home', 'développeur', 'full-stack', 'portfolio', 'jeffred', 'nanodev'],
+                    section: 'accueil',
+                    type: 'section'
+                },
+                {
+                    title: 'À propos',
+                    description: 'Présentation et expérience professionnelle',
+                    icon: 'fas fa-user',
+                    keywords: ['à propos', 'about', 'expérience', 'développeur', 'passionné', 'jeffred'],
+                    section: 'apropos',
+                    type: 'section'
+                },
+                {
+                    title: 'Projets',
+                    description: 'Portfolio des projets réalisés',
+                    icon: 'fas fa-briefcase',
+                    keywords: ['projets', 'projects', 'e-commerce', 'portfolio', 'react native', 'dashboard', 'analytics'],
+                    section: 'projets',
+                    type: 'section'
+                },
+                {
+                    title: 'Compétences',
+                    description: 'Technologies et outils maîtrisés',
+                    icon: 'fas fa-code',
+                    keywords: ['compétences', 'skills', 'react', 'vue', 'nodejs', 'python', 'mongodb', 'docker', 'aws', 'git'],
+                    section: 'competences',
+                    type: 'section'
+                },
+                {
+                    title: 'Contact',
+                    description: 'Formulaire de contact et informations',
+                    icon: 'fas fa-envelope',
+                    keywords: ['contact', 'contactez', 'email', 'message', 'formulaire'],
+                    section: 'contact',
+                    type: 'section'
+                },
+                
+                // Projets spécifiques
+                {
+                    title: 'E-commerce Platform',
+                    description: 'Plateforme complète avec panier et paiement',
+                    icon: 'fas fa-shopping-cart',
+                    keywords: ['e-commerce', 'plateforme', 'panier', 'paiement', 'stocks'],
+                    section: 'projets',
+                    type: 'project'
+                },
+                {
+                    title: 'Portfolio Dynamique',
+                    description: 'Site vitrine responsive avec animations',
+                    icon: 'fas fa-palette',
+                    keywords: ['portfolio', 'vitrine', 'responsive', 'animations'],
+                    section: 'projets',
+                    type: 'project'
+                },
+                {
+                    title: 'App Mobile React Native',
+                    description: 'Application cross-platform pour gestion des tâches',
+                    icon: 'fas fa-mobile-alt',
+                    keywords: ['app', 'mobile', 'react native', 'cross-platform', 'tâches'],
+                    section: 'projets',
+                    type: 'project'
+                },
+                {
+                    title: 'Dashboard Analytics',
+                    description: 'Interface d\'administration avec graphiques',
+                    icon: 'fas fa-chart-bar',
+                    keywords: ['dashboard', 'analytics', 'administration', 'graphiques', 'métriques'],
+                    section: 'projets',
+                    type: 'project'
+                },
+                
+                // Compétences principales
+                {
+                    title: 'React & Vue.js',
+                    description: 'Frameworks JavaScript modernes',
+                    icon: 'fab fa-react',
+                    keywords: ['react', 'vue', 'javascript', 'frameworks', 'frontend'],
+                    section: 'competences',
+                    type: 'skill'
+                },
+                {
+                    title: 'Node.js & Python',
+                    description: 'Développement backend et APIs',
+                    icon: 'fab fa-node-js',
+                    keywords: ['nodejs', 'python', 'backend', 'api', 'serveur'],
+                    section: 'competences',
+                    type: 'skill'
+                },
+                {
+                    title: 'Bases de données & Cloud',
+                    description: 'MongoDB, Docker, AWS',
+                    icon: 'fas fa-database',
+                    keywords: ['mongodb', 'docker', 'aws', 'base de données', 'cloud'],
+                    section: 'competences',
+                    type: 'skill'
+                }
+            ];
+
+            let currentResults = [];
+            let selectedIndex = -1;
+            let searchResultsContainer = null;
+
+            // Créer le conteneur de résultats
+            function createSearchResults() {
+                if (!searchResultsContainer) {
+                    searchResultsContainer = document.createElement('div');
+                    searchResultsContainer.className = 'search-results';
+                    document.querySelector('.search-bar').appendChild(searchResultsContainer);
+                }
+                return searchResultsContainer;
+            }
+
+            function performSearch(query) {
+                if (!query.trim()) {
+                    hideSearchResults();
                     return;
                 }
 
-                this.isSubmitting = true;
-                this.setSubmitButton(true);
-                this.showStatus('loading', 'Envoi en cours...');
+                currentResults = searchableItems.filter(item => 
+                    item.keywords.some(keyword => 
+                        keyword.toLowerCase().includes(query.toLowerCase())
+                    ) || item.title.toLowerCase().includes(query.toLowerCase()) ||
+                    item.description.toLowerCase().includes(query.toLowerCase())
+                );
 
-                try {
-                    // Récupération et sanitisation des données
-                    const formData = new FormData(this.form);
-                    const data = Object.fromEntries(formData.entries());
-                    const sanitizedData = this.sanitizeData(data);
+                displaySearchResults();
+            }
 
-                    // Envoi des données (remplacer par votre logique)
-                    const result = await this.simulateSubmit(sanitizedData);
+            function displaySearchResults() {
+                const resultsContainer = createSearchResults();
+                resultsContainer.innerHTML = '';
+                selectedIndex = -1;
 
-                    if (result.success) {
-                        this.showStatus('success', result.message);
-                        this.form.reset();
-                        this.clearAllErrors();
-                    } else {
-                        throw new Error(result.message || 'Erreur lors de l\'envoi');
-                    }
+                if (currentResults.length === 0) {
+                    resultsContainer.innerHTML = '<div class="search-no-results">Aucun résultat trouvé</div>';
+                    resultsContainer.style.display = 'block';
+                    return;
+                }
 
-                } catch (error) {
-                    console.error('Erreur formulaire:', error);
+                currentResults.forEach((result, index) => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.innerHTML = `
+                        <i class="${result.icon} search-result-icon"></i>
+                        <div class="search-result-content">
+                            <div class="search-result-title">${result.title}</div>
+                            <div class="search-result-description">${result.description}</div>
+                        </div>
+                    `;
                     
-                    let errorMessage = 'Une erreur est survenue lors de l\'envoi';
-                    if (error.message === 'Spam détecté') {
-                        errorMessage = 'Soumission invalide détectée';
-                    } else if (error.message.includes('réseau')) {
-                        errorMessage = 'Erreur réseau. Veuillez réessayer';
-                    }
+                    resultItem.addEventListener('click', () => navigateToResult(result));
+                    resultItem.addEventListener('mouseenter', () => {
+                        clearSelection();
+                        selectedIndex = index;
+                        resultItem.classList.add('selected');
+                    });
                     
-                    this.showStatus('error', errorMessage);
-                } finally {
-                    this.isSubmitting = false;
-                    this.setSubmitButton(false);
-                }
+                    resultsContainer.appendChild(resultItem);
+                });
+
+                resultsContainer.style.display = 'block';
             }
 
-            // Gestion du bouton de soumission
-            setSubmitButton(loading) {
-                const icon = this.submitBtn.querySelector('i');
-                const text = this.submitBtn.querySelector('span');
-
-                if (loading) {
-                    this.submitBtn.disabled = true;
-                    icon.className = 'loading-spinner';
-                    text.textContent = 'Envoi en cours...';
-                } else {
-                    this.submitBtn.disabled = false;
-                    icon.className = 'fas fa-paper-plane';
-                    text.textContent = 'Envoyer le message';
+            function hideSearchResults() {
+                if (searchResultsContainer) {
+                    searchResultsContainer.style.display = 'none';
                 }
+                selectedIndex = -1;
             }
 
-            // Affichage des messages de statut
-            showStatus(type, message) {
-                this.formStatus.className = `form-status ${type}`;
-                this.formStatus.textContent = message;
-                this.formStatus.style.display = 'block';
-
-                // Auto-hide après 5 secondes pour les succès
-                if (type === 'success') {
-                    setTimeout(() => {
-                        this.formStatus.style.display = 'none';
-                    }, 5000);
-                }
-            }
-
-            // Nettoyage des erreurs
-            clearAllErrors() {
-                this.form.querySelectorAll('.form-group').forEach(group => {
-                    group.classList.remove('error', 'success');
-                    group.querySelector('.error-message').style.display = 'none';
+            function clearSelection() {
+                document.querySelectorAll('.search-result-item.selected').forEach(item => {
+                    item.classList.remove('selected');
                 });
             }
-        }
 
-        // Initialisation des formulaires (desktop et mobile)
-        document.addEventListener('DOMContentLoaded', () => {
-            // Desktop form
-            if (document.getElementById('contactForm')) {
-                new ContactForm();
-            }
-            // Mobile form
-            if (document.getElementById('mobileContactForm')) {
-                new MobileContactForm();
-            }
-        });
-
-        // Mobile Contact Form Class (extends desktop functionality)
-        class MobileContactForm extends ContactForm {
-            constructor() {
-                super();
-                this.form = document.getElementById('mobileContactForm');
-                this.submitBtn = document.getElementById('mobileSubmitBtn');
-                this.formStatus = document.getElementById('mobileFormStatus');
-                this.init();
-            }
-        }
-
-        // Gestion des statistiques rotatives
-        document.addEventListener('DOMContentLoaded', () => {
-            const stats = document.querySelectorAll('.rotating-stat');
-            const dots = document.querySelectorAll('.stat-dot');
-            let currentStat = 0;
-            let autoRotateInterval;
-
-            function showStat(index) {
-                // Masquer toutes les stats
-                stats.forEach(stat => stat.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
+            function navigateToResult(result) {
+                // Naviguer vers la section appropriée
+                const navItem = document.querySelector(`[data-section="${result.section}"]`);
+                if (navItem && navItem.classList.contains('nav-item')) {
+                    navItem.click();
+                }
                 
-                // Afficher la stat sélectionnée
-                if (stats[index]) {
-                    stats[index].classList.add('active');
-                    dots[index].classList.add('active');
-                    currentStat = index;
+                // Fermer les résultats de recherche
+                hideSearchResults();
+                searchInput.blur();
+            }
+
+            // Event listeners
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    performSearch(e.target.value.trim());
+                });
+
+                searchInput.addEventListener('keydown', (e) => {
+                    if (currentResults.length === 0) return;
+
+                    switch(e.key) {
+                        case 'ArrowDown':
+                            e.preventDefault();
+                            clearSelection();
+                            selectedIndex = Math.min(selectedIndex + 1, currentResults.length - 1);
+                            if (selectedIndex >= 0) {
+                                document.querySelectorAll('.search-result-item')[selectedIndex].classList.add('selected');
+                            }
+                            break;
+                            
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            clearSelection();
+                            selectedIndex = Math.max(selectedIndex - 1, -1);
+                            if (selectedIndex >= 0) {
+                                document.querySelectorAll('.search-result-item')[selectedIndex].classList.add('selected');
+                            }
+                            break;
+                            
+                        case 'Enter':
+                            e.preventDefault();
+                            if (selectedIndex >= 0 && currentResults[selectedIndex]) {
+                                navigateToResult(currentResults[selectedIndex]);
+                            }
+                            break;
+                            
+                        case 'Escape':
+                            e.preventDefault();
+                            searchInput.value = '';
+                            hideSearchResults();
+                            searchInput.blur();
+                            break;
+                    }
+                });
+            }
+
+            // Fermer la recherche en cliquant ailleurs
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.search-bar')) {
+                    hideSearchResults();
+                }
+            });
+
+            // Gestion sécurisée du formulaire de contact avec FORMSPREE
+            class ContactForm {
+                constructor() {
+                    this.form = document.getElementById('contactForm');
+                    if (this.form) {
+                        this.submitBtn = document.getElementById('submitBtn');
+                        this.formStatus = document.getElementById('formStatus');
+                        this.isSubmitting = false;
+                        this.init();
+                    }
+                }
+
+                init() {
+                    this.form.addEventListener('submit', this.handleSubmit.bind(this));
+                    
+                    // Validation en temps réel
+                    this.form.querySelectorAll('input, textarea').forEach(field => {
+                        field.addEventListener('blur', () => this.validateField(field));
+                        field.addEventListener('input', () => this.clearFieldError(field));
+                    });
+                }
+
+                // Validation des champs
+                validateField(field) {
+                    const formGroup = field.closest('.form-group');
+                    const errorMsg = formGroup.querySelector('.error-message');
+                    let isValid = true;
+                    let message = '';
+
+                    // Nettoyage des classes précédentes
+                    formGroup.classList.remove('error', 'success');
+
+                    switch(field.name) {
+                        case 'name':
+                            if (!field.value.trim()) {
+                                message = 'Le nom est requis';
+                                isValid = false;
+                            } else if (field.value.trim().length < 2) {
+                                message = 'Le nom doit contenir au moins 2 caractères';
+                                isValid = false;
+                            } else if (!/^[a-zA-ZÀ-ÿ\s-']+$/.test(field.value.trim())) {
+                                message = 'Le nom contient des caractères invalides';
+                                isValid = false;
+                            }
+                            break;
+
+                        case 'email':
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!field.value.trim()) {
+                                message = 'L\'email est requis';
+                                isValid = false;
+                            } else if (!emailRegex.test(field.value.trim())) {
+                                message = 'Format d\'email invalide';
+                                isValid = false;
+                            }
+                            break;
+
+                        case 'subject':
+                            if (field.value.trim() && field.value.trim().length < 3) {
+                                message = 'Le sujet doit contenir au moins 3 caractères';
+                                isValid = false;
+                            }
+                            break;
+
+                        case 'message':
+                            if (!field.value.trim()) {
+                                message = 'Le message est requis';
+                                isValid = false;
+                            } else if (field.value.trim().length < 10) {
+                                message = 'Le message doit contenir au moins 10 caractères';
+                                isValid = false;
+                            }
+                            break;
+                    }
+
+                    if (!isValid) {
+                        formGroup.classList.add('error');
+                        errorMsg.textContent = message;
+                        errorMsg.style.display = 'block';
+                    } else if (field.value.trim()) {
+                        formGroup.classList.add('success');
+                        errorMsg.style.display = 'none';
+                    }
+
+                    return isValid;
+                }
+
+                clearFieldError(field) {
+                    const formGroup = field.closest('.form-group');
+                    const errorMsg = formGroup.querySelector('.error-message');
+                    formGroup.classList.remove('error');
+                    errorMsg.style.display = 'none';
+                }
+
+                // Validation complète du formulaire
+                validateForm() {
+                    const fields = this.form.querySelectorAll('input[required], textarea[required]');
+                    let isValid = true;
+
+                    fields.forEach(field => {
+                        if (!this.validateField(field)) {
+                            isValid = false;
+                        }
+                    });
+
+                    return isValid;
+                }
+
+                // Gestion de l'envoi du formulaire avec FORMSPREE
+                async handleSubmit(e) {
+                    e.preventDefault();
+
+                    if (this.isSubmitting) return;
+
+                    // Validation du formulaire
+                    if (!this.validateForm()) {
+                        this.showStatus('error', 'Veuillez corriger les erreurs dans le formulaire');
+                        return;
+                    }
+
+                    this.isSubmitting = true;
+                    this.setSubmitButton(true);
+                    this.showStatus('loading', 'Envoi en cours...');
+
+                    try {
+                        // Envoi avec Formspree (natif)
+                        const formData = new FormData(this.form);
+                        const response = await fetch(this.form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            this.showStatus('success', 'Message envoyé avec succès ! Je vous répondrai rapidement.');
+                            this.form.reset();
+                            this.clearAllErrors();
+                        } else {
+                            throw new Error('Erreur lors de l\'envoi');
+                        }
+
+                    } catch (error) {
+                        console.error('Erreur formulaire:', error);
+                        this.showStatus('error', 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer.');
+                    } finally {
+                        this.isSubmitting = false;
+                        this.setSubmitButton(false);
+                    }
+                }
+
+                // Gestion du bouton de soumission
+                setSubmitButton(loading) {
+                    const icon = this.submitBtn.querySelector('i');
+                    const text = this.submitBtn.querySelector('span');
+
+                    if (loading) {
+                        this.submitBtn.disabled = true;
+                        icon.className = 'loading-spinner';
+                        text.textContent = 'Envoi en cours...';
+                    } else {
+                        this.submitBtn.disabled = false;
+                        icon.className = 'fas fa-paper-plane';
+                        text.textContent = 'Envoyer le message';
+                    }
+                }
+
+                // Affichage des messages de statut
+                showStatus(type, message) {
+                    this.formStatus.className = `form-status ${type}`;
+                    this.formStatus.textContent = message;
+                    this.formStatus.style.display = 'block';
+
+                    // Auto-hide après 5 secondes pour les succès
+                    if (type === 'success') {
+                        setTimeout(() => {
+                            this.formStatus.style.display = 'none';
+                        }, 5000);
+                    }
+                }
+
+                // Nettoyage des erreurs
+                clearAllErrors() {
+                    this.form.querySelectorAll('.form-group').forEach(group => {
+                        group.classList.remove('error', 'success');
+                        group.querySelector('.error-message').style.display = 'none';
+                    });
                 }
             }
 
-            function nextStat() {
-                currentStat = (currentStat + 1) % stats.length;
-                showStat(currentStat);
+            // Mobile Contact Form Class (extends desktop functionality)
+            class MobileContactForm extends ContactForm {
+                constructor() {
+                    super();
+                    this.form = document.getElementById('mobileContactForm');
+                    if (this.form) {
+                        this.submitBtn = document.getElementById('mobileSubmitBtn');
+                        this.formStatus = document.getElementById('mobileFormStatus');
+                        this.init();
+                    }
+                }
             }
 
-            function startAutoRotate() {
-                clearInterval(autoRotateInterval);
-                autoRotateInterval = setInterval(nextStat, 3000); // Change toutes les 3 secondes
-            }
+            // Initialisation des formulaires (desktop et mobile)
+            document.addEventListener('DOMContentLoaded', () => {
+                // Desktop form
+                if (document.getElementById('contactForm')) {
+                    new ContactForm();
+                }
+                // Mobile form
+                if (document.getElementById('mobileContactForm')) {
+                    new MobileContactForm();
+                }
+            });
 
-            function stopAutoRotate() {
-                clearInterval(autoRotateInterval);
-            }
+            // Gestion des statistiques rotatives
+            document.addEventListener('DOMContentLoaded', () => {
+                const stats = document.querySelectorAll('.rotating-stat');
+                const dots = document.querySelectorAll('.stat-dot');
+                let currentStat = 0;
+                let autoRotateInterval;
 
-            // Gestion des clics sur les dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    showStat(index);
-                    stopAutoRotate();
-                    // Redémarrer l'auto-rotation après 5 secondes
-                    setTimeout(startAutoRotate, 5000);
+                function showStat(index) {
+                    // Masquer toutes les stats
+                    stats.forEach(stat => stat.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    
+                    // Afficher la stat sélectionnée
+                    if (stats[index]) {
+                        stats[index].classList.add('active');
+                        dots[index].classList.add('active');
+                        currentStat = index;
+                    }
+                }
+
+                function nextStat() {
+                    currentStat = (currentStat + 1) % stats.length;
+                    showStat(currentStat);
+                }
+
+                function startAutoRotate() {
+                    clearInterval(autoRotateInterval);
+                    autoRotateInterval = setInterval(nextStat, 3000); // Change toutes les 3 secondes
+                }
+
+                function stopAutoRotate() {
+                    clearInterval(autoRotateInterval);
+                }
+
+                // Gestion des clics sur les dots
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        showStat(index);
+                        stopAutoRotate();
+                        // Redémarrer l'auto-rotation après 5 secondes
+                        setTimeout(startAutoRotate, 5000);
+                    });
+                });
+
+                // Initialiser seulement si les éléments existent
+                if (stats.length > 0) {
+                    showStat(0);
+                    startAutoRotate();
+
+                    // Pause au hover
+                    const statsContainer = document.querySelector('.stats-simple');
+                    if (statsContainer) {
+                        statsContainer.addEventListener('mouseenter', stopAutoRotate);
+                        statsContainer.addEventListener('mouseleave', startAutoRotate);
+                    }
+                }
+            });
+
+            // Effets hover pour les boutons
+            const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'translateY(-2px) scale(1.02)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(0) scale(1)';
                 });
             });
+            </script>
 
-            // Initialiser
-            showStat(0);
-            startAutoRotate();
+            <!-- Scripts d'animation interactive -->
+            <script>
+            let isActive = false;
+            let activeTimeout;
+            let shapes = [];
+            let trailShapes = [];
+            let mouseCursor;
+            let colorIndex = 0;
 
-            // Pause au hover
-            const statsContainer = document.querySelector('.stats-simple');
-            if (statsContainer) {
-                statsContainer.addEventListener('mouseenter', stopAutoRotate);
-                statsContainer.addEventListener('mouseleave', startAutoRotate);
+            // Couleurs inspirées de l'image
+            const colors = [
+                { r: 255, g: 120, b: 150 }, // Rose/rouge
+                { r: 150, g: 180, b: 255 }, // Bleu clair
+                { r: 255, g: 200, b: 120 }, // Orange/jaune
+                { r: 200, g: 150, b: 255 }, // Violet
+                { r: 120, g: 255, b: 180 }, // Vert menthe
+                { r: 255, g: 150, b: 120 }, // Orange/coral
+            ];
+
+            // Créer le curseur coloré
+            function createMouseCursor() {
+                mouseCursor = document.createElement('div');
+                mouseCursor.className = 'mouse-cursor';
+                document.body.appendChild(mouseCursor);
+                updateCursorColor();
             }
-        });
 
-        // Effets hover pour les boutons
-        const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
-        buttons.forEach(button => {
-            button.addEventListener('mouseenter', () => {
-                button.style.transform = 'translateY(-2px) scale(1.02)';
+            // Mettre à jour la couleur du curseur
+            function updateCursorColor() {
+                const color = colors[colorIndex];
+                mouseCursor.style.background = `radial-gradient(circle, rgba(${color.r}, ${color.g}, ${color.b}, 0.8) 0%, rgba(${color.r}, ${color.g}, ${color.b}, 0.4) 70%, transparent 100%)`;
+                colorIndex = (colorIndex + 1) % colors.length;
+            }
+
+            // Initialiser le curseur au chargement
+            window.addEventListener('load', () => {
+                createMouseCursor();
             });
-            
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = 'translateY(0) scale(1)';
+
+            document.addEventListener('click', (e) => {
+                // Changer la couleur du curseur à chaque clic
+                updateCursorColor();
+                activateEffect(e.clientX, e.clientY);
             });
-        });
-    </script>
-    <script>
-        let isActive = false;
-        let activeTimeout;
-        let shapes = [];
-        let trailShapes = [];
-        let mouseCursor;
-        let colorIndex = 0;
-        
-        // Couleurs inspirées de l'image
-        const colors = [
-            { r: 255, g: 120, b: 150 }, // Rose/rouge
-            { r: 150, g: 180, b: 255 }, // Bleu clair
-            { r: 255, g: 200, b: 120 }, // Orange/jaune
-            { r: 200, g: 150, b: 255 }, // Violet
-            { r: 120, g: 255, b: 180 }, // Vert menthe
-            { r: 255, g: 150, b: 120 }, // Orange/coral
-        ];
 
-        // Créer le curseur coloré
-        function createMouseCursor() {
-            mouseCursor = document.createElement('div');
-            mouseCursor.className = 'mouse-cursor';
-            document.body.appendChild(mouseCursor);
-            updateCursorColor();
-        }
-
-        // Mettre à jour la couleur du curseur
-        function updateCursorColor() {
-            const color = colors[colorIndex];
-            mouseCursor.style.background = `radial-gradient(circle, rgba(${color.r}, ${color.g}, ${color.b}, 0.8) 0%, rgba(${color.r}, ${color.g}, ${color.b}, 0.4) 70%, transparent 100%)`;
-            colorIndex = (colorIndex + 1) % colors.length;
-        }
-
-        // Initialiser le curseur au chargement
-        window.addEventListener('load', () => {
-            createMouseCursor();
-        });
-
-        document.addEventListener('click', (e) => {
-            // Changer la couleur du curseur à chaque clic
-            updateCursorColor();
-            activateEffect(e.clientX, e.clientY);
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            // Mettre à jour la position du curseur coloré
-            if (mouseCursor) {
-                mouseCursor.style.left = (e.clientX - 10) + 'px';
-                mouseCursor.style.top = (e.clientY - 10) + 'px';
-            }
-            
-            if (isActive) {
-                createTrailShape(e.clientX, e.clientY);
-            }
-        });
-
-        function activateEffect(x, y) {
-            isActive = true;
-            
-            // Créer plusieurs formes principales
-            for (let i = 0; i < 3; i++) {
-                setTimeout(() => {
-                    createMainShape(x, y);
-                }, i * 100);
-            }
-            
-            // Désactiver après 1 seconde
-            clearTimeout(activeTimeout);
-            activeTimeout = setTimeout(() => {
-                isActive = false;
-                fadeOutAllShapes();
-            }, 1000);
-        }
-
-        function createMainShape(centerX, centerY) {
-            const shape = document.createElement('div');
-            shape.className = 'shape';
-            
-            // Taille aléatoire entre 50 et 200px
-            const size = Math.random() * 50 + 150;
-            
-            // Position aléatoire autour du clic
-            const offsetX = (Math.random() - 0.5) * 200;
-            const offsetY = (Math.random() - 0.5) * 200;
-            const x = centerX + offsetX;
-            const y = centerY + offsetY;
-            
-            // Couleur aléatoire avec gradient
-            const color1 = colors[Math.floor(Math.random() * colors.length)];
-            const color2 = colors[Math.floor(Math.random() * colors.length)];
-            
-            // Forme organique aléatoire
-            const borderRadius = generateOrganicRadius();
-            
-            shape.style.left = (x - size/2) + 'px';
-            shape.style.top = (y - size/2) + 'px';
-            shape.style.width = size + 'px';
-            shape.style.height = size + 'px';
-            shape.style.borderRadius = borderRadius;
-            shape.style.background = `radial-gradient(ellipse at ${Math.random() * 100}% ${Math.random() * 100}%, 
-                rgba(${color1.r}, ${color1.g}, ${color1.b}, 0.8) 0%,
-                rgba(${color2.r}, ${color2.g}, ${color2.b}, 0.6) 60%,
-                transparent 100%)`;
-            
-            document.body.appendChild(shape);
-            shapes.push(shape);
-            
-            // Animation d'apparition
-            setTimeout(() => {
-                shape.classList.add('active');
-            }, 50);
-        }
-
-        function createTrailShape(x, y) {
-            const shape = document.createElement('div');
-            shape.className = 'trail-shape';
-            
-            // Petite forme pour le trail
-            const size = Math.random() * 80 + 40;
-            
-            // Léger décalage aléatoire
-            const offsetX = (Math.random() - 0.5) * 50;
-            const offsetY = (Math.random() - 0.5) * 50;
-            
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const borderRadius = generateOrganicRadius();
-            
-            shape.style.left = (x + offsetX - size/2) + 'px';
-            shape.style.top = (y + offsetY - size/2) + 'px';
-            shape.style.width = size + 'px';
-            shape.style.height = size + 'px';
-            shape.style.borderRadius = borderRadius;
-            shape.style.background = `radial-gradient(ellipse at 50% 50%, 
-                rgba(${color.r}, ${color.g}, ${color.b}, 0.6) 0%,
-                rgba(${color.r}, ${color.g}, ${color.b}, 0.3) 50%,
-                transparent 100%)`;
-            
-            document.body.appendChild(shape);
-            trailShapes.push(shape);
-            
-            // Animation de fade out
-            shape.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-            
-            setTimeout(() => {
-                shape.style.opacity = '0';
-                shape.style.transform = 'scale(1.3)';
-            }, 100);
-            
-            // Suppression
-            setTimeout(() => {
-                if (shape.parentNode) {
-                    shape.parentNode.removeChild(shape);
-                    trailShapes = trailShapes.filter(s => s !== shape);
+            document.addEventListener('mousemove', (e) => {
+                // Mettre à jour la position du curseur coloré
+                if (mouseCursor) {
+                    mouseCursor.style.left = (e.clientX - 10) + 'px';
+                    mouseCursor.style.top = (e.clientY - 10) + 'px';
                 }
-            }, 900);
-        }
+                
+                if (isActive) {
+                    createTrailShape(e.clientX, e.clientY);
+                }
+            });
 
-        function generateOrganicRadius() {
-            // Génère des border-radius organiques aléatoires
-            const values = [];
-            for (let i = 0; i < 8; i++) {
-                values.push(Math.random() * 50 + 25 + '%');
+            function activateEffect(x, y) {
+                isActive = true;
+                
+                // Créer plusieurs formes principales
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        createMainShape(x, y);
+                    }, i * 100);
+                }
+                
+                // Désactiver après 1 seconde
+                clearTimeout(activeTimeout);
+                activeTimeout = setTimeout(() => {
+                    isActive = false;
+                    fadeOutAllShapes();
+                }, 1000);
             }
-            return `${values[0]} ${values[1]} ${values[2]} ${values[3]} / ${values[4]} ${values[5]} ${values[6]} ${values[7]}`;
-        }
 
-        function fadeOutAllShapes() {
-            shapes.forEach(shape => {
-                shape.classList.add('fade-out');
+            function createMainShape(centerX, centerY) {
+                const shape = document.createElement('div');
+                shape.className = 'shape';
+                
+                // Taille aléatoire entre 50 et 200px
+                const size = Math.random() * 50 + 150;
+                
+                // Position aléatoire autour du clic
+                const offsetX = (Math.random() - 0.5) * 200;
+                const offsetY = (Math.random() - 0.5) * 200;
+                const x = centerX + offsetX;
+                const y = centerY + offsetY;
+                
+                // Couleur aléatoire avec gradient
+                const color1 = colors[Math.floor(Math.random() * colors.length)];
+                const color2 = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Forme organique aléatoire
+                const borderRadius = generateOrganicRadius();
+                
+                shape.style.left = (x - size/2) + 'px';
+                shape.style.top = (y - size/2) + 'px';
+                shape.style.width = size + 'px';
+                shape.style.height = size + 'px';
+                shape.style.borderRadius = borderRadius;
+                shape.style.background = `radial-gradient(ellipse at ${Math.random() * 100}% ${Math.random() * 100}%, 
+                    rgba(${color1.r}, ${color1.g}, ${color1.b}, 0.8) 0%,
+                    rgba(${color2.r}, ${color2.g}, ${color2.b}, 0.6) 60%,
+                    transparent 100%)`;
+                
+                document.body.appendChild(shape);
+                shapes.push(shape);
+                
+                // Animation d'apparition
+                setTimeout(() => {
+                    shape.classList.add('active');
+                }, 50);
+            }
+
+            function createTrailShape(x, y) {
+                const shape = document.createElement('div');
+                shape.className = 'trail-shape';
+                
+                // Petite forme pour le trail
+                const size = Math.random() * 80 + 40;
+                
+                // Léger décalage aléatoire
+                const offsetX = (Math.random() - 0.5) * 50;
+                const offsetY = (Math.random() - 0.5) * 50;
+                
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const borderRadius = generateOrganicRadius();
+                
+                shape.style.left = (x + offsetX - size/2) + 'px';
+                shape.style.top = (y + offsetY - size/2) + 'px';
+                shape.style.width = size + 'px';
+                shape.style.height = size + 'px';
+                shape.style.borderRadius = borderRadius;
+                shape.style.background = `radial-gradient(ellipse at 50% 50%, 
+                    rgba(${color.r}, ${color.g}, ${color.b}, 0.6) 0%,
+                    rgba(${color.r}, ${color.g}, ${color.b}, 0.3) 50%,
+                    transparent 100%)`;
+                
+                document.body.appendChild(shape);
+                trailShapes.push(shape);
+                
+                // Animation de fade out
+                shape.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                
+                setTimeout(() => {
+                    shape.style.opacity = '0';
+                    shape.style.transform = 'scale(1.3)';
+                }, 100);
+                
+                // Suppression
                 setTimeout(() => {
                     if (shape.parentNode) {
                         shape.parentNode.removeChild(shape);
+                        trailShapes = trailShapes.filter(s => s !== shape);
                     }
-                }, 1000);
-            });
-            shapes = [];
-        }
+                }, 900);
+            }
 
-        // Nettoyage périodique
-        setInterval(() => {
+            function generateOrganicRadius() {
+                // Génère des border-radius organiques aléatoires
+                const values = [];
+                for (let i = 0; i < 8; i++) {
+                    values.push(Math.random() * 50 + 25 + '%');
+                }
+                return `${values[0]} ${values[1]} ${values[2]} ${values[3]} / ${values[4]} ${values[5]} ${values[6]} ${values[7]}`;
+            }
+
+            function fadeOutAllShapes() {
+                shapes.forEach(shape => {
+                    shape.classList.add('fade-out');
+                    setTimeout(() => {
+                        if (shape.parentNode) {
+                            shape.parentNode.removeChild(shape);
+                        }
+                    }, 1000);
+                });
+                shapes = [];
+            }
+
+            // Nettoyage périodique
+            setInterval(() => {
             shapes = shapes.filter(shape => document.body.contains(shape));
             trailShapes = trailShapes.filter(shape => document.body.contains(shape));
         }, 2000);
-    </script>
-</body>
+            </script>
+    </body>
 </html>
